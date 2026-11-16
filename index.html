@@ -2,7 +2,7 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>Dhamir-Lens — Visualisasi Interaktif Qawaid Marja' al-Dhamir</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,22 +14,36 @@
     <style>
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f6f5f0;
       }
       .font-arab {
         font-family: 'Amiri', serif;
         font-feature-settings: "liga" 1, "calt" 1;
       }
+      .kanvas-mushaf {
+        background-color: #fcfbf7;
+        background-image: radial-gradient(#d6d3c9 0.65px, transparent 0.65px);
+        background-size: 18px 18px;
+      }
       @keyframes dashFlow {
         to {
-          stroke-dashoffset: -18;
+          stroke-dashoffset: -20;
         }
       }
       .animate-panah {
-        animation: dashFlow 1.2s linear infinite;
+        animation: dashFlow 1.1s linear infinite;
+      }
+      /* Sembunyikan scrollbar horizontal pada pil kaidah di HP */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-950">
+  <body class="text-slate-800 antialiased selection:bg-amber-200 selection:text-emerald-950">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
