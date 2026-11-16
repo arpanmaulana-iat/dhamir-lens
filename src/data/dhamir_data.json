@@ -1,0 +1,385 @@
+[
+    {
+      "id": "kaidah-1",
+      "nomor_kaidah": 1,
+      "judul_kaidah": "Kaidah 1: Menghimpun Multi-Rujukan (Al-Jam'u bayna al-Maraji')",
+      "kategori": "Ta'addud al-Marja'",
+      "redaksi_kaidah": "إِذَا كَانَ فِي الْآيَةِ ضَمِيرٌ يَحْتَمِلُ عَوْدَهُ إِلَى أَكْثَرَ مِنْ مَذْكُورٍ وَأَمْكَنَ الْحَمْلُ عَلَى الْجَمِيعِ، حُمِلَ عَلَيْهِ",
+      "terjemah_kaidah": "Apabila dalam satu ayat terdapat dhamir yang memungkinkan kembali kepada lebih dari satu lafaz yang disebut dan memungkinkan untuk dihimpun semuanya, maka dhamir tersebut dibawa kepada seluruh makna tersebut.",
+      "surah_ayat": "QS. Al-Insyiqaq [84]: 6",
+      "terjemahan": "Wahai manusia! Sesungguhnya kamu telah bekerja keras menuju Tuhanmu, maka kamu akan menemui-Nya (dan menemui hasil kerja kerasmu).",
+      "tokens": [
+        {
+          "id": "w1",
+          "teks": "يَا أَيُّهَا",
+          "peran": "netral",
+          "jenis_nahwu": "Harf Nida' & Munada",
+          "keterangan_kata": "Seruan umum yang ditujukan kepada seluruh umat manusia."
+        },
+        {
+          "id": "w2",
+          "teks": "الْإِنْسَانُ",
+          "peran": "netral",
+          "jenis_nahwu": "Badal / 'Athaf Bayan",
+          "keterangan_kata": "Objek seruan (mukhatab) yang menjadi subjek utama perjalanan amal."
+        },
+        {
+          "id": "w3",
+          "teks": "إِنَّكَ",
+          "peran": "netral",
+          "jenis_nahwu": "Harf Taukid + Dhamir Mukhatab",
+          "keterangan_kata": "Penegasan kepastian perjalanan hidup manusia menuju akhirat."
+        },
+        {
+          "id": "w4",
+          "teks": "كَادِحٌ",
+          "peran": "netral",
+          "jenis_nahwu": "Khabar Inna (Isim Fa'il)",
+          "keterangan_kata": "Bermakna bersungguh-sungguh dan berjerih payah dalam beramal."
+        },
+        {
+          "id": "w5",
+          "teks": "إِلَىٰ",
+          "peran": "netral",
+          "jenis_nahwu": "Harf Jarr",
+          "keterangan_kata": "Menunjukkan arah tujuan akhir perjalanan manusia."
+        },
+        {
+          "id": "w6",
+          "teks": "رَبِّكَ",
+          "peran": "marja",
+          "jenis_nahwu": "Isim Zhahir (Marja' Awwal)",
+          "keterangan_kata": "Kandidat rujukan pertama: Allah SWT sebagai Rabb yang akan ditemui pada hari hisab."
+        },
+        {
+          "id": "w7",
+          "teks": "كَدْحًا",
+          "peran": "marja",
+          "jenis_nahwu": "Maf'ul Muthlaq / Masdar (Marja' Tsani)",
+          "keterangan_kata": "Kandidat rujukan kedua: jerih payah dan catatan amal perbuatan manusia."
+        },
+        {
+          "id": "w8",
+          "teks": "فَمُلَاقِيهِ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Isim Fa'il + Dhamir Muttashil (ـهِ)",
+          "keterangan_kata": "Fokus analisis: Dhamir mudzakkar mufrad (ـهِ) di akhir kata yang mengikat objek pertemuan."
+        }
+      ],
+      "perspektif": [
+        {
+          "id": "p1-jamu",
+          "nama": "Tarjih Himpun Kedua Makna (Al-Qurthubi & Ibnu 'Asyur)",
+          "metode_tarjih": "Al-Jam'u bayna al-Ma'ani al-Muhtamalah",
+          "panah": [
+            {
+              "dari": "w8",
+              "ke": "w6",
+              "warna": "#059669",
+              "label": "Marja' 1: Bertemu Allah SWT (رَبِّكَ)",
+              "penjelasan_singkat": "Manusia pasti menghadap Tuhannya untuk mempertanggungjawabkan amal."
+            },
+            {
+              "dari": "w8",
+              "ke": "w7",
+              "warna": "#4f46e5",
+              "label": "Marja' 2: Menemui hasil amal (كَدْحًا)",
+              "penjelasan_singkat": "Manusia juga menjumpai balasan dari jerih payah amalnya sendiri."
+            }
+          ],
+          "analisis": "Tidak terdapat qarinah yang saling menafikan antara kembalinya dhamir (ـهِ) kepada lafaz رَبِّكَ maupun kepada masdar كَدْحًا. Secara teologis dan kontekstual, pertemuan dengan Allah pada hari kiamat beriringan langsung dengan penerimaan catatan hasil kerja keras manusia di dunia.",
+          "qarinah": "Ketiadaan qarinah mani'ah (penghalang) dan keselarasan makna ayat berikutnya (فَأَمَّا مَنْ أُوتِيَ كِتَابَهُ بِيَمِينِهِ).",
+          "rujukan": "Al-Jami' li Ahkam al-Qur'an (Al-Qurthubi), Juz 19, hlm. 270; Al-Tahrir wa al-Tanwir (Ibnu 'Asyur), Juz 30, hlm. 221."
+        },
+        {
+          "id": "p1-rabb",
+          "nama": "Fokus Marja' Lafaz Allah (Al-Zamakhsyari)",
+          "metode_tarjih": "Tarjih bi I'tibar al-Sabiq al-Ashli",
+          "panah": [
+            {
+              "dari": "w8",
+              "ke": "w6",
+              "warna": "#059669",
+              "label": "Marja' Utama: Menghadap Allah SWT (رَبِّكَ)",
+              "penjelasan_singkat": "Selaras dengan ungkapan إِلَىٰ رَبِّكَ yang bermakna pertemuan dengan Tuhan."
+            }
+          ],
+          "analisis": "Al-Zamakhsyari mengutamakan kembalinya dhamir kepada lafaz رَبِّكَ karena susunan kalimat sejak awal (كَادِحٌ إِلَىٰ رَبِّكَ) memusatkan tujuan perjalanan manusia kepada perjumpaan dengan Tuhannya.",
+          "qarinah": "Kesatuan struktur huruf jarr إِلَىٰ yang mengarahkan fi'il/isim fa'il langsung kepada رَبِّكَ.",
+          "rujukan": "Al-Kasysyaf 'an Haqa'iq Ghawamidh al-Tanzil (Al-Zamakhsyari), Juz 4, hlm. 726."
+        }
+      ]
+    },
+    {
+      "id": "kaidah-2",
+      "nomor_kaidah": 2,
+      "judul_kaidah": "Kaidah 2: Mengembalikan Dhamir ke Lafaz Terdekat (Al-'Awdu ila al-Aqrab)",
+      "kategori": "Tartib al-Marja'",
+      "redaksi_kaidah": "الْأَصْلُ عَوْدُ الضَّمِيرِ إِلَى أَقْرَبِ مَذْكُورٍ إِلَّا بِدَلِيلٍ يَصْرِفُهُ عَنْهُ",
+      "terjemah_kaidah": "Hukum asal kembalinya dhamir adalah kepada lafaz yang paling dekat penyebutannya, kecuali terdapat dalil atau qarinah yang memalingkannya kepada lafaz yang lebih jauh.",
+      "surah_ayat": "QS. Al-Baqarah [2]: 228",
+      "terjemahan": "Dan para suami mereka lebih berhak merujuk mereka dalam masa (iddah) itu, jika mereka (para suami) menghendaki ishlah (perbaikan).",
+      "tokens": [
+        {
+          "id": "w1",
+          "teks": "وَبُعُولَتُهُنَّ",
+          "peran": "marja",
+          "jenis_nahwu": "Mubtada' + Dhamir (Para Suami)",
+          "keterangan_kata": "Lafaz pertama (lebih jauh): para suami yang menjatuhkan talak raj'i."
+        },
+        {
+          "id": "w2",
+          "teks": "أَحَقُّ",
+          "peran": "netral",
+          "jenis_nahwu": "Khabar Mubtada' (Isim Tafdhil)",
+          "keterangan_kata": "Menunjukkan keutamaan hak rujuk bagi suami selama masa iddah."
+        },
+        {
+          "id": "w3",
+          "teks": "بِرَدِّهِنَّ",
+          "peran": "qarinah",
+          "jenis_nahwu": "Masdar Mudhaf + Dhamir Niswah",
+          "keterangan_kata": "Qarinah konteks hukum: tindakan merujuk istri (رَدّ) yang terkait masa iddah."
+        },
+        {
+          "id": "w4",
+          "teks": "فِي",
+          "peran": "netral",
+          "jenis_nahwu": "Harf Jarr Zharfiyyah",
+          "keterangan_kata": "Menunjukkan batasan rentang waktu pelaksanaan hak rujuk."
+        },
+        {
+          "id": "w5",
+          "teks": "ذَٰلِكَ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Isim Isyarah (Berperan serupa Dhamir Rujukan)",
+          "keterangan_kata": "Menunjuk pada masa penantian tiga kali quru' (iddah) yang disebut di awal ayat."
+        },
+        {
+          "id": "w6",
+          "teks": "إِنْ أَرَادُوا",
+          "peran": "dhamir",
+          "jenis_nahwu": "Fi'il Madhi + Wawu al-Jama'ah",
+          "keterangan_kata": "Dhamir jamak mudzakkar (ـوا) yang mengikat syarat niat baik dalam rujuk."
+        },
+        {
+          "id": "w7",
+          "teks": "إِصْلَاحًا",
+          "peran": "netral",
+          "jenis_nahwu": "Maf'ul Bih",
+          "keterangan_kata": "Tujuan syariat rujuk, yakni memperbaiki hubungan rumah tangga."
+        }
+      ],
+      "perspektif": [
+        {
+          "id": "p2-jumhur",
+          "nama": "Pendapat Jumhur Mufassirin (Merujuk pada Para Suami)",
+          "metode_tarjih": "Al-'Awdu ila al-Marja' al-Munasib li al-Siyaq",
+          "panah": [
+            {
+              "dari": "w6",
+              "ke": "w1",
+              "warna": "#059669",
+              "label": "Wawu al-Jama'ah (أَرَادُوا) → Para Suami (بُعُولَتُهُنَّ)",
+              "penjelasan_singkat": "Niat ishlah disyaratkan bagi suami yang memegang kendali hak rujuk."
+            }
+          ],
+          "analisis": "Dhamir jamak (ـوا) pada kata أَرَادُوا dikembalikan kepada lafaz بُعُولَتُهُنَّ (para suami) karena merekalah pemilik hak rujuk (بِرَدِّهِنَّ) yang menjadi qarinah langsung sebelum kata syarat tersebut.",
+          "qarinah": "Konteks pembebanan hukum hak rujuk (أَحَقُّ بِرَدِّهِنَّ) yang berada di tangan suami.",
+          "rujukan": "Tafsir al-Qur'an al-'Azhim (Ibnu Katsir), Juz 1, hlm. 607; Qawaid al-Tafsir (Khalid al-Sabt), Juz 2, hlm. 532."
+        }
+      ]
+    },
+    {
+      "id": "kaidah-3",
+      "nomor_kaidah": 3,
+      "judul_kaidah": "Kaidah 3: Dhamir Merujuk pada Makna Non-Eksplisit (Ghayru Madzkur)",
+      "kategori": "Siyaq & Dalalah",
+      "redaksi_kaidah": "يَعُودُ الضَّمِيرُ عَلَى غَيْرِ مَذْكُورٍ فِي اللَّفْظِ إِذَا دَلَّ عَلَيْهِ السِّيَاقُ أَوْ شُهْرَتُهُ فِي الْأَذْهَانِ",
+      "terjemah_kaidah": "Dhamir dapat kembali kepada sesuatu yang tidak disebutkan lafaznya secara eksplisit di dalam teks apabila konteks pembicaraan (siyaq) atau kemasyhurannya sudah sangat jelas.",
+      "surah_ayat": "QS. Al-Qadr [97]: 1",
+      "terjemahan": "Sesungguhnya Kami telah menurunkannya (Al-Qur'an) pada malam kemuliaan (Lailatul Qadar).",
+      "marja_eksternal": "الْقُرْآنُ الْكَرِيمُ (Al-Qur'an al-Karim — Marja' Siyaqi)",
+      "tokens": [
+        {
+          "id": "w1",
+          "teks": "إِنَّا",
+          "peran": "netral",
+          "jenis_nahwu": "Inna + Dhamir Nahnu li al-Ta'zhim",
+          "keterangan_kata": "Penegasan keagungan Allah SWT sebagai Dzat yang menurunkan wahyu."
+        },
+        {
+          "id": "w2",
+          "teks": "أَنْزَلْنَاهُ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Fi'il + Fa'il + Dhamir Maf'ul (ـهُ)",
+          "keterangan_kata": "Dhamir (ـهُ) pada kata أَنْزَلْنَاهُ merujuk pada Al-Qur'an meskipun kata Al-Qur'an tidak disebut sebelumnya."
+        },
+        {
+          "id": "w3",
+          "teks": "فِي",
+          "peran": "netral",
+          "jenis_nahwu": "Harf Jarr",
+          "keterangan_kata": "Menunjukkan keterangan waktu turunnya wahyu."
+        },
+        {
+          "id": "w4",
+          "teks": "لَيْلَةِ",
+          "peran": "qarinah",
+          "jenis_nahwu": "Majrur (Qarinah Waktu Turunnya Wahyu)",
+          "keterangan_kata": "Penyebutan malam yang diberkahi menjadi petunjuk kuat bahwa objek yang diturunkan adalah Al-Qur'an."
+        },
+        {
+          "id": "w5",
+          "teks": "الْقَدْرِ",
+          "peran": "qarinah",
+          "jenis_nahwu": "Mudhaf Ilayh",
+          "keterangan_kata": "Kemuliaan malam tersebut bersumber dari turunnya Al-Qur'an di dalamnya."
+        }
+      ],
+      "perspektif": [
+        {
+          "id": "p3-balaghah",
+          "nama": "Analisis Balaghah & Tafsir (Al-Suyuthi & Ibnu 'Asyur)",
+          "metode_tarjih": "Al-Idhmar Qabla al-Dzikr li al-Ta'zhim",
+          "panah": [
+            {
+              "dari": "w2",
+              "ke": "external",
+              "warna": "#d97706",
+              "label": "Dhamir (ـهُ) → Al-Qur'an al-Karim (Marja' di luar lafaz ayat)",
+              "penjelasan_singkat": "Tidak disebut eksplisit untuk menunjukkan bahwa Al-Qur'an sudah hadir di benak setiap mukmin."
+            }
+          ],
+          "analisis": "Penggunaan dhamir (ـهُ) tanpa mendahuluinya dengan lafaz 'Al-Qur'an' merupakan puncak kefasihan (balaghah) untuk mengagungkan Al-Qur'an (li al-ta'zhim). Kehadirannya di dalam hati dan ingatan umat Islam membuat penyebutan nama eksplisitnya tidak lagi diperlukan.",
+          "qarinah": "Fi'il al-inzal (أَنْزَلْنَا) yang disandingkan dengan keterangan waktu لَيْلَةِ الْقَدْرِ (selaras dengan QS. Al-Baqarah: 185 dan QS. Al-Dukhan: 3).",
+          "rujukan": "Al-Itqan fi 'Ulum al-Qur'an (Al-Suyuthi), Juz 2, hlm. 245; Al-Tahrir wa al-Tanwir (Ibnu 'Asyur), Juz 30, hlm. 455."
+        }
+      ]
+    },
+    {
+      "id": "kaidah-9",
+      "nomor_kaidah": 9,
+      "judul_kaidah": "Kaidah 9: Kesatuan vs Distribusi Marja' pada Dhamir Berurutan",
+      "kategori": "Ta'aqub al-Dhama'ir",
+      "redaksi_kaidah": "إِذَا تَعَاقَبَتِ الضَّمَائِرُ فَالْأَصْلُ أَنْ يَتَّحِدَ مَرْجِعُهَا وَلَا تُفَرَّقَ إِلَّا بِقَرِينَةٍ",
+      "terjemah_kaidah": "Apabila beberapa dhamir datang secara berurutan dalam satu susunan kalimat, hukum asalnya adalah menyatukan rujukannya dan tidak memisah-misahkannya kecuali terdapat qarinah yang menuntut pemisahan.",
+      "surah_ayat": "QS. Al-Fath [48]: 9",
+      "terjemahan": "Agar kamu semua beriman kepada Allah dan Rasul-Nya, menguatkan (agama)-Nya, membesarkan-Nya, dan bertasbih kepada-Nya pada waktu pagi dan petang.",
+      "tokens": [
+        {
+          "id": "w1",
+          "teks": "لِتُؤْمِنُوا",
+          "peran": "netral",
+          "jenis_nahwu": "Lam al-Ta'lil + Fi'il Mudhari'",
+          "keterangan_kata": "Menjelaskan hikmah diutusnya Rasulullah SAW sebagai saksi dan pembawa kabar gembira."
+        },
+        {
+          "id": "w2",
+          "teks": "بِاللَّهِ",
+          "peran": "marja",
+          "jenis_nahwu": "Lafzh al-Jalalah (Marja' 1)",
+          "keterangan_kata": "Kandidat rujukan pertama: Allah SWT."
+        },
+        {
+          "id": "w3",
+          "teks": "وَرَسُولِهِ",
+          "peran": "marja",
+          "jenis_nahwu": "Ma'thuf + Dhamir (Marja' 2)",
+          "keterangan_kata": "Kandidat rujukan kedua: Rasulullah SAW."
+        },
+        {
+          "id": "w4",
+          "teks": "وَتُعَزِّرُوهُ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Fi'il Mudhari' + Dhamir 1 (ـهُ)",
+          "keterangan_kata": "Dhamir pertama: menolong/membela (agama Allah atau diri Rasulullah SAW)."
+        },
+        {
+          "id": "w5",
+          "teks": "وَتُوَقِّرُوهُ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Fi'il Mudhari' + Dhamir 2 (ـهُ)",
+          "keterangan_kata": "Dhamir kedua: memuliakan/mengagungkan."
+        },
+        {
+          "id": "w6",
+          "teks": "وَتُسَبِّحُوهُ",
+          "peran": "dhamir",
+          "jenis_nahwu": "Fi'il Mudhari' + Dhamir 3 (ـهُ)",
+          "keterangan_kata": "Dhamir ketiga: menyucikan/bertasbih (khusus hanya layak bagi Allah SWT)."
+        },
+        {
+          "id": "w7",
+          "teks": "بُكْرَةً وَأَصِيلًا",
+          "peran": "qarinah",
+          "jenis_nahwu": "Zharaf Zaman (Qarinah Ibadah)",
+          "keterangan_kata": "Penyebutan waktu pagi dan petang menguatkan makna ibadah tasbih kepada Allah."
+        }
+      ],
+      "perspektif": [
+        {
+          "id": "p9-ittihad",
+          "nama": "Pendapat Ibnu 'Asyur (Ittihad al-Marja' — Satu Rujukan)",
+          "metode_tarjih": "Tamassuk bi al-Ashl (Kesatuan Marja')",
+          "panah": [
+            {
+              "dari": "w4",
+              "ke": "w2",
+              "warna": "#059669",
+              "label": "Dhamir 1 (تُعَزِّرُوهُ) → Menolong agama Allah",
+              "penjelasan_singkat": "Membela agama Allah dengan makna idhafah yang dibuang (تُعَزِّرُوا دِينَهُ)."
+            },
+            {
+              "dari": "w5",
+              "ke": "w2",
+              "warna": "#059669",
+              "label": "Dhamir 2 (تُوَقِّرُوهُ) → Mengagungkan Allah",
+              "penjelasan_singkat": "Memuliakan syiar dan kebesaran Allah SWT."
+            },
+            {
+              "dari": "w6",
+              "ke": "w2",
+              "warna": "#059669",
+              "label": "Dhamir 3 (تُسَبِّحُوهُ) → Bertasbih kepada Allah",
+              "penjelasan_singkat": "Menyucikan Allah di waktu pagi dan petang."
+            }
+          ],
+          "analisis": "Ibnu 'Asyur berpegang teguh pada kaidah asal bahwa ketiga dhamir (ـهُ) yang berurutan disatukan rujukannya pada lafaz Allah (بِاللَّهِ) agar tidak terjadi penceraian rujukan dhamir (tafkik al-dhama'ir) tanpa kebutuhan mendesak.",
+          "qarinah": "Keutuhan struktur ketiga fi'il yang sejajar dan akhiran ayat (تُسَبِّحُوهُ) yang pasti merujuk pada Allah.",
+          "rujukan": "Al-Tahrir wa al-Tanwir (Ibnu 'Asyur), Juz 26, hlm. 158."
+        },
+        {
+          "id": "p9-tawzi",
+          "nama": "Pendapat Ibnu 'Abbas & Mayoritas Mufassir (Distribusi Marja')",
+          "metode_tarjih": "Tawzi' al-Dhama'ir bi Qarinah Syar'iyyah",
+          "panah": [
+            {
+              "dari": "w4",
+              "ke": "w3",
+              "warna": "#d97706",
+              "label": "Dhamir 1 (تُعَزِّرُوهُ) → Menolong Rasulullah SAW",
+              "penjelasan_singkat": "Membela perjuangan Nabi SAW secara langsung."
+            },
+            {
+              "dari": "w5",
+              "ke": "w3",
+              "warna": "#d97706",
+              "label": "Dhamir 2 (تُوَقِّرُوهُ) → Memuliakan Rasulullah SAW",
+              "penjelasan_singkat": "Menghormati kedudukan Nabi SAW."
+            },
+            {
+              "dari": "w6",
+              "ke": "w2",
+              "warna": "#059669",
+              "label": "Dhamir 3 (تُسَبِّحُوهُ) → Bertasbih khusus kepada Allah",
+              "penjelasan_singkat": "Tasbih adalah ibadah mahdhah yang hanya ditujukan kepada Allah SWT."
+            }
+          ],
+          "analisis": "Menurut Ibnu 'Abbas, Mujahid, dan Qatadah, dua dhamir pertama kembali kepada Rasulullah SAW karena secara hakiki beliaulah yang dibela dan dihormati oleh para sahabat, sedangkan dhamir ketiga kembali kepada Allah SWT karena ibadah tasbih tidak boleh ditujukan kepada makhluk.",
+          "qarinah": "Qarinah akidah dan syariat pada lafaz تُسَبِّحُوهُ yang secara eksklusif hanya berlaku bagi Allah SWT.",
+          "rujukan": "Tafsir al-Qur'an al-'Azhim (Ibnu Katsir), Juz 7, hlm. 331; Ma'alim al-Tanzil (Al-Baghawi), Juz 7, hlm. 301."
+        }
+      ]
+    }
+  ]
