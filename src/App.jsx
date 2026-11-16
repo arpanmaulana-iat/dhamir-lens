@@ -1,22 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import dhamirData from './data/dhamir_data.json';
 
-const TAKSONOMI_9_KAIDAH = [
-  { no: 1, judul: "Menghimpun Multi-Rujukan (Al-Jam'u bayna al-Maraji')", status: "Aktif" },
-  { no: 2, judul: "Mengembalikan Dhamir ke Lafaz Terdekat (Al-'Awdu ila al-Aqrab)", status: "Aktif" },
-  { no: 3, judul: "Dhamir Merujuk pada Makna Siyaqi Non-Eksplisit (Ghayru Madzkur)", status: "Aktif" },
-  { no: 4, judul: "Kesesuaian Jenis & Bilangan antara Dhamir dan Marja' (Al-Muthabaqah)", status: "Siap Diinput" },
-  { no: 5, judul: "Kembalinya Dhamir pada Lafaz vs Makna (Al-Lafzh wa al-Ma'na)", status: "Siap Diinput" },
-  { no: 6, judul: "Dhamir al-Sya'n & Dhamir al-Qishshah (Penegas Perkara Besar)", status: "Siap Diinput" },
-  { no: 7, judul: "Dhamir al-Fashl sebagai Pembatas Makna (Al-Hashr wa al-Taukid)", status: "Siap Diinput" },
-  { no: 8, judul: "Pergeseran Gaya Bahasa Dhamir (Al-Iltifat fi al-Dhama'ir)", status: "Siap Diinput" },
-  { no: 9, judul: "Kesatuan vs Distribusi Marja' pada Dhamir Berurutan", status: "Aktif" }
-];
-
 export default function App() {
   const [tabAktif, setTabAktif] = useState('visualisasi');
   const [pencarian, setPencarian] = useState('');
   const [kaidahIdAktif, setKaidahIdAktif] = useState(dhamirData[0].id);
+  const [ayatIdxAktif, setAyatIdxAktif] = useState(0);
   const [perspektifIdx, setPerspektifIdx] = useState(0);
   const [panahTerpilih, setPanahTerpilih] = useState(null);
   const [kataTerpilih, setKataTerpilih] = useState(null);
@@ -29,17 +18,27 @@ export default function App() {
 
   const dataTerfilter = dhamirData.filter((item) => {
     const q = pencarian.toLowerCase();
-    return (
+    const cocokKaidah =
       item.judul_kaidah.toLowerCase().includes(q) ||
-      item.surah_ayat.toLowerCase().includes(q) ||
-      item.kategori.toLowerCase().includes(q)
+      item.kategori.toLowerCase().includes(q) ||
+      item.terjemah_kaidah.toLowerCase().includes(q);
+    const cocokAyat = item.daftar_ayat.some((a) =>
+      a.surah_ayat.toLowerCase().includes(q)
     );
+    return cocokKaidah || cocokAyat;
   });
 
   const dataAktif =
     dhamirData.find((item) => item.id === kaidahIdAktif) || dhamirData[0];
+  const ayatAktif =
+    dataAktif.daftar_ayat[ayatIdxAktif] || dataAktif.daftar_ayat[0];
   const perspektifAktif =
-    dataAktif.perspektif[perspektifIdx] || dataAktif.perspektif[0];
+    ayatAktif.perspektif[perspektifIdx] || ayatAktif.perspektif[0];
+
+  const totalAyatKorpus = dhamirData.reduce(
+    (acc, k) => acc + k.daftar_ayat.length,
+    0
+  );
 
   const hitungKoordinatPanah = useCallback(() => {
     if (!stageRef.current || tabAktif !== 'visualisasi') return;
@@ -88,13 +87,13 @@ export default function App() {
           path: `M ${startX} ${startY} Q ${midX} ${controlY} ${endX} ${endY - 4}`,
           puncakX,
           puncakY,
-          markerId: `arrow-${dataAktif.id}-${perspektifIdx}-${index}`
+          markerId: `arrow-${dataAktif.id}-${ayatIdxAktif}-${perspektifIdx}-${index}`
         };
       })
       .filter(Boolean);
 
     setGarisPanah(hasil);
-  }, [dataAktif.id, perspektifAktif, perspektifIdx, tabAktif]);
+  }, [ayatIdxAktif, dataAktif.id, perspektifAktif, perspektifIdx, tabAktif]);
 
   useEffect(() => {
     hitungKoordinatPanah();
@@ -121,7 +120,17 @@ export default function App() {
   }, [hitungKoordinatPanah, tampilkanPanah]);
 
   const pilihKaidah = (id) => {
+    tokenRefs.current = {};
     setKaidahIdAktif(id);
+    setAyatIdxAktif(0);
+    setPerspektifIdx(0);
+    setPanahTerpilih(null);
+    setKataTerpilih(null);
+  };
+
+  const pilihAyat = (idx) => {
+    tokenRefs.current = {};
+    setAyatIdxAktif(idx);
     setPerspektifIdx(0);
     setPanahTerpilih(null);
     setKataTerpilih(null);
@@ -129,7 +138,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header Utama Bernuansa Zamrud & Emas Mushaf */}
+      {/* Header Utama */}
       <header className="bg-gradient-to-r from-emerald-950 via-emerald-900 to-teal-950 text-white border-b-2 border-amber-500/40 sticky top-0 z-30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
@@ -144,11 +153,11 @@ export default function App() {
                   Dhamir-Lens
                 </h1>
                 <span className="text-[11px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-200 border border-amber-400/40 px-2.5 py-0.5 rounded-full">
-                  Qawaid Tafsir
+                  Qawaid al-Tafsir
                 </span>
               </div>
               <p className="text-xs text-emerald-100/80 hidden sm:block">
-                Atlas Interaktif Marja' al-Dhamir & Komparasi Manhaj Mufassirin
+                Visualisasi Marja' al-Dhamir — Rujukan Kitab Dr. Khalid bin Utsman al-Sabt
               </p>
             </div>
           </div>
@@ -162,7 +171,7 @@ export default function App() {
                   : 'text-emerald-100 hover:text-white'
               }`}
             >
-              Peta Ayat
+              Peta Ayat ({totalAyatKorpus})
             </button>
             <button
               onClick={() => setTabAktif('kerangka')}
@@ -172,7 +181,7 @@ export default function App() {
                   : 'text-emerald-100 hover:text-white'
               }`}
             >
-              9 Kaidah Dhamir
+              Indeks 9 Kaidah
             </button>
           </nav>
         </div>
@@ -180,15 +189,15 @@ export default function App() {
 
       {tabAktif === 'visualisasi' ? (
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-5">
-          {/* Baris Navigasi Cepat Kaidah untuk Mobile & Tablet (Agar Ayat Langsung Terlihat) */}
+          {/* Navigasi Cepat Horizontal untuk Mobile & Tablet */}
           <div className="lg:hidden space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-900">
-                Pilih Studi Kaidah ({dhamirData.length} Tersedia)
+              <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-950">
+                Pilih Kaidah (1–9)
               </span>
               <span className="text-xs text-slate-500">Geser ke samping →</span>
             </div>
-            <div className="flex gap-2.5 overflow-x-auto no-scrollbar pb-1">
+            <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
               {dhamirData.map((item) => {
                 const aktif = item.id === dataAktif.id;
                 return (
@@ -197,16 +206,16 @@ export default function App() {
                     onClick={() => pilihKaidah(item.id)}
                     className={`shrink-0 px-3.5 py-2.5 rounded-xl border text-left transition ${
                       aktif
-                        ? 'bg-emerald-900 text-white border-emerald-900 shadow-md'
+                        ? 'bg-emerald-950 text-white border-emerald-950 shadow-md'
                         : 'bg-white text-slate-800 border-stone-200 hover:border-emerald-500'
                     }`}
                   >
                     <div className="flex items-center gap-2">
                       <span
-                        className={`text-[11px] font-extrabold px-2 py-0.5 rounded-md ${
+                        className={`text-xs font-extrabold px-2 py-0.5 rounded-md ${
                           aktif
                             ? 'bg-amber-400 text-emerald-950'
-                            : 'bg-emerald-50 text-emerald-800'
+                            : 'bg-emerald-100 text-emerald-900'
                         }`}
                       >
                         Kaidah {item.nomor_kaidah}
@@ -216,7 +225,7 @@ export default function App() {
                           aktif ? 'text-emerald-200' : 'text-slate-500'
                         }`}
                       >
-                        {item.surah_ayat}
+                        {item.daftar_ayat.length} Ayat
                       </span>
                     </div>
                   </button>
@@ -226,15 +235,15 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            {/* Sidebar Desktop */}
+            {/* Sidebar Indeks 9 Kaidah (Desktop) */}
             <aside className="hidden lg:block lg:col-span-4 space-y-4 sticky top-20">
               <div className="bg-white p-4 rounded-2xl border border-stone-200/90 shadow-sm space-y-3.5">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xs font-extrabold uppercase tracking-wider text-slate-500">
-                    Indeks Kaidah & Korpus Ayat
+                    Bab Al-Dhama'ir (9 Kaidah)
                   </h2>
                   <span className="text-xs font-bold bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                    {dataTerfilter.length} Kaidah
+                    {totalAyatKorpus} Ayat
                   </span>
                 </div>
 
@@ -243,7 +252,7 @@ export default function App() {
                     type="text"
                     value={pencarian}
                     onChange={(e) => setPencarian(e.target.value)}
-                    placeholder="Cari surah, kaidah, atau bab..."
+                    placeholder="Cari kaidah, kategori, atau surah..."
                     className="w-full pl-9 pr-3 py-2.5 text-sm bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:bg-white transition"
                   />
                   <svg
@@ -256,46 +265,39 @@ export default function App() {
                   </svg>
                 </div>
 
-                <div className="space-y-2.5">
+                <div className="space-y-2 max-h-[560px] overflow-y-auto pr-1">
                   {dataTerfilter.map((item) => {
                     const aktif = item.id === dataAktif.id;
                     return (
                       <button
                         key={item.id}
                         onClick={() => pilihKaidah(item.id)}
-                        className={`w-full text-left p-4 rounded-xl border transition-all ${
+                        className={`w-full text-left p-3.5 rounded-xl border transition-all ${
                           aktif
                             ? 'bg-emerald-950 text-white border-emerald-950 shadow-md'
-                            : 'bg-stone-50/60 text-slate-800 border-stone-200 hover:border-emerald-500 hover:bg-white'
+                            : 'bg-stone-50/70 text-slate-800 border-stone-200 hover:border-emerald-500 hover:bg-white'
                         }`}
                       >
-                        <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <div className="flex items-center justify-between gap-2 mb-1">
                           <span
-                            className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${
+                            className={`text-xs font-bold px-2 py-0.5 rounded-md ${
                               aktif
                                 ? 'bg-amber-400 text-emerald-950'
                                 : 'bg-emerald-100 text-emerald-900'
                             }`}
                           >
-                            {item.surah_ayat}
+                            Bab: {item.kategori}
                           </span>
                           <span
-                            className={`text-xs font-medium ${
+                            className={`text-xs font-semibold ${
                               aktif ? 'text-amber-300' : 'text-slate-500'
                             }`}
                           >
-                            {item.perspektif.length} Pendapat
+                            {item.daftar_ayat.length} Ayat
                           </span>
                         </div>
                         <p className="text-sm font-bold leading-snug">
                           {item.judul_kaidah}
-                        </p>
-                        <p
-                          className={`text-xs mt-1 ${
-                            aktif ? 'text-emerald-200' : 'text-slate-500'
-                          }`}
-                        >
-                          Bab: {item.kategori}
                         </p>
                       </button>
                     );
@@ -304,16 +306,16 @@ export default function App() {
               </div>
             </aside>
 
-            {/* Area Utama: Rumusan Kaidah + Panggung Mushaf Interaktif */}
+            {/* Panel Utama: Teori Kaidah + Pilihan Ayat + Kanvas Mushaf */}
             <section className="lg:col-span-8 space-y-5">
-              {/* Kartu Redaksi Kaidah */}
-              <div className="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm space-y-3.5">
+              {/* Kartu Matan Kaidah & Tawdhih */}
+              <div className="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-900 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-                    Rumusan Kaidah Tafsir
+                    Rumusan Kaidah ({dataAktif.kategori})
                   </span>
-                  <span className="text-xs sm:text-sm font-extrabold text-amber-950 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full">
-                    {dataAktif.surah_ayat}
+                  <span className="text-xs font-bold text-slate-500">
+                    {dataAktif.sumber_kitab}
                   </span>
                 </div>
 
@@ -321,30 +323,68 @@ export default function App() {
                   {dataAktif.judul_kaidah}
                 </h2>
 
-                <div className="kanvas-mushaf border border-amber-200/80 border-r-4 border-r-emerald-800 p-4 sm:p-5 rounded-xl space-y-2.5">
+                <div className="kanvas-mushaf border border-amber-200/80 border-r-4 border-r-emerald-800 p-4 sm:p-5 rounded-xl space-y-3">
                   <p
                     dir="rtl"
                     className="font-arab text-2xl sm:text-3xl text-right text-slate-950 leading-loose"
                   >
                     {dataAktif.redaksi_kaidah}
                   </p>
-                  <p className="text-sm text-slate-700 leading-relaxed pt-2 border-t border-stone-200/80">
-                    <span className="font-bold text-emerald-950">Makna Kaidah:</span>{' '}
-                    {dataAktif.terjemah_kaidah}
-                  </p>
+                  <div className="pt-2.5 border-t border-stone-200/80 space-y-1.5 text-sm">
+                    <p className="text-slate-800 leading-relaxed">
+                      <span className="font-bold text-emerald-950">Terjemah Kaidah:</span>{' '}
+                      {dataAktif.terjemah_kaidah}
+                    </p>
+                    <p className="text-slate-600 leading-relaxed">
+                      <span className="font-bold text-slate-800">Tawdhih al-Qa'idah:</span>{' '}
+                      {dataAktif.tawdhih_kaidah}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Pemilih Contoh Ayat Penerapan (Tathbiq) dalam Kaidah Aktif */}
+                <div className="pt-1 space-y-2">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-slate-500 block">
+                    Pilih Contoh Ayat Penerapan / Tathbiq ({dataAktif.daftar_ayat.length} Ayat dalam Kaidah Ini):
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {dataAktif.daftar_ayat.map((ayat, idx) => {
+                      const aktif = idx === ayatIdxAktif;
+                      return (
+                        <button
+                          key={ayat.id_ayat}
+                          onClick={() => pilihAyat(idx)}
+                          className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold border transition text-left ${
+                            aktif
+                              ? 'bg-amber-400 text-emerald-950 border-amber-500 shadow-sm'
+                              : 'bg-stone-50 text-slate-700 border-stone-200 hover:border-emerald-500 hover:bg-white'
+                          }`}
+                        >
+                          <span className="block font-extrabold">{ayat.surah_ayat}</span>
+                          <span className="text-[11px] font-medium opacity-85">
+                            {ayat.label_kategori}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
-              {/* Panggung Visualisasi Ayat & Komparasi Mufassir */}
+              {/* Panggung Visualisasi Ayat Terpilih */}
               <div className="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm space-y-5">
-                {/* Baris Kontrol Perspektif & Mode Uji */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-stone-100">
                   <div>
-                    <span className="text-xs font-extrabold uppercase tracking-wider text-slate-400 block">
-                      Komparasi Manhaj Mufassirin
-                    </span>
-                    <span className="text-xs sm:text-sm text-slate-600">
-                      Pilih pendapat ulama untuk melihat perubahan jalur rujukan
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm sm:text-base font-extrabold text-emerald-950">
+                        {ayatAktif.surah_ayat}
+                      </span>
+                      <span className="text-xs font-bold bg-amber-100 text-amber-950 px-2.5 py-0.5 rounded-full">
+                        {ayatAktif.label_kategori}
+                      </span>
+                    </div>
+                    <span className="text-xs text-slate-500 block mt-0.5">
+                      Pilih pendapat mufassir di bawah untuk membandingkan arah rujukan dhamir
                     </span>
                   </div>
 
@@ -358,13 +398,13 @@ export default function App() {
                     }`}
                   >
                     <span className="w-2 h-2 rounded-full bg-current"></span>
-                    {tampilkanPanah ? 'Mode Visual: Panah Aktif' : 'Mode Uji: Panah Disembunyikan'}
+                    {tampilkanPanah ? 'Panah Visual: Aktif' : 'Mode Uji: Panah Disembunyikan'}
                   </button>
                 </div>
 
-                {/* Tombol Pilihan Pendapat Mufassir */}
+                {/* Pilihan Perspektif Mufassir */}
                 <div className="flex flex-wrap gap-2">
-                  {dataAktif.perspektif.map((p, idx) => (
+                  {ayatAktif.perspektif.map((p, idx) => (
                     <button
                       key={p.id}
                       onClick={() => {
@@ -373,7 +413,7 @@ export default function App() {
                       }}
                       className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition ${
                         perspektifIdx === idx
-                          ? 'bg-emerald-900 text-white shadow-md ring-2 ring-emerald-900/20'
+                          ? 'bg-emerald-900 text-white shadow-md'
                           : 'bg-stone-100 text-slate-700 hover:bg-stone-200'
                       }`}
                     >
@@ -382,7 +422,7 @@ export default function App() {
                   ))}
                 </div>
 
-                {/* Legenda Warna Kaligrafi */}
+                {/* Legenda Warna */}
                 <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
                   <div className="flex flex-wrap items-center gap-4">
                     <span className="inline-flex items-center gap-1.5 font-medium">
@@ -399,21 +439,20 @@ export default function App() {
                     </span>
                   </div>
                   <span className="text-xs text-slate-400">
-                    Ketuk lafaz Arab untuk bedah i'rab
+                    Ketuk kata Arab untuk inspeksi i'rab
                   </span>
                 </div>
 
                 {/* Kanvas Mushaf & SVG Kurva Panah */}
                 <div
+                  key={`${dataAktif.id}-${ayatIdxAktif}`}
                   ref={stageRef}
                   className="kanvas-mushaf relative pt-28 pb-9 px-4 sm:px-8 rounded-2xl border-2 border-amber-300/60 shadow-inner overflow-x-auto"
                 >
-                  {/* Ornamen Sudut Mushaf */}
                   <div className="absolute top-2.5 left-3 text-[11px] font-bold tracking-widest uppercase text-amber-800/50 select-none">
                     ﴿ رَسْمٌ عُثْمَانِيٌّ ﴾
                   </div>
 
-                  {/* Lapisan SVG Kurva Panah */}
                   {tampilkanPanah && (
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
                       <defs>
@@ -478,25 +517,25 @@ export default function App() {
                     </svg>
                   )}
 
-                  {/* Lencana Marja' Siyaqi Eksternal (Khusus Kaidah 3) */}
-                  {dataAktif.marja_eksternal && (
+                  {/* Lencana Marja' Siyaqi Eksternal */}
+                  {ayatAktif.marja_eksternal && (
                     <div className="flex justify-center mb-12 relative z-10">
                       <div
                         ref={externalMarjaRef}
                         dir="rtl"
                         className="font-arab text-lg sm:text-xl font-bold bg-emerald-950 text-amber-200 px-5 py-1.5 rounded-full border-2 border-amber-400 shadow-md"
                       >
-                        {dataAktif.marja_eksternal}
+                        {ayatAktif.marja_eksternal}
                       </div>
                     </div>
                   )}
 
-                  {/* Baris Kaligrafi Ayat Mengalir Alami (Tanpa Kotak Kaku) */}
+                  {/* Baris Kaligrafi Ayat */}
                   <div
                     dir="rtl"
                     className="font-arab flex flex-wrap justify-center items-baseline gap-x-3 sm:gap-x-4 gap-y-6 text-3xl sm:text-5xl relative z-10"
                   >
-                    {dataAktif.tokens.map((token) => {
+                    {ayatAktif.tokens.map((token) => {
                       const terpilih = kataTerpilih?.id === token.id;
 
                       let gayaKata =
@@ -542,7 +581,7 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Panel Bedah I'rab Kata (Muncul saat kata diklik) */}
+                {/* Panel Bedah I'rab Kata */}
                 {kataTerpilih && (
                   <div className="bg-emerald-950 text-white p-4 sm:p-5 rounded-2xl border border-amber-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
                     <div className="space-y-1.5">
@@ -567,7 +606,7 @@ export default function App() {
                   </div>
                 )}
 
-                {/* Daftar Jalur Panah Interaktif */}
+                {/* Daftar Jalur Panah */}
                 {tampilkanPanah && (
                   <div className="space-y-2.5">
                     <div className="flex items-center justify-between">
@@ -622,10 +661,10 @@ export default function App() {
 
                 {/* Terjemahan Ayat */}
                 <blockquote className="text-sm sm:text-base italic text-slate-700 bg-stone-50 border-l-4 border-emerald-700 px-4 py-3.5 rounded-r-xl leading-relaxed">
-                  "{dataAktif.terjemahan}"
+                  "{ayatAktif.terjemahan}"
                 </blockquote>
 
-                {/* Kartu Analisis Tarjih & Rujukan Kitab */}
+                {/* Kartu Analisis Tarjih & Otoritas Kitab */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
                   <div className="bg-emerald-50/75 p-4 sm:p-5 rounded-2xl border border-emerald-200 space-y-2.5">
                     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -648,14 +687,14 @@ export default function App() {
                   <div className="bg-amber-50/70 p-4 sm:p-5 rounded-2xl border border-amber-200 flex flex-col justify-between space-y-3">
                     <div className="space-y-2">
                       <h3 className="text-xs font-extrabold uppercase tracking-wider text-amber-950">
-                        Otoritas Rujukan Kitab Tafsir
+                        Takhrij & Otoritas Rujukan Kitab
                       </h3>
                       <p className="text-sm text-slate-800 leading-relaxed font-medium">
                         {perspektifAktif.rujukan}
                       </p>
                     </div>
                     <div className="text-xs text-amber-900/80 border-t border-amber-200/80 pt-2.5">
-                      Diverifikasi melalui kaidah klasik <em>Qawaid al-Tafsir</em> & analisis <em>Nahwu</em>.
+                      Sumber utama: <em>Qawa'id al-Tafsir Jam'an wa Dirasatan</em> (Dr. Khalid bin Utsman al-Sabt).
                     </div>
                   </div>
                 </div>
@@ -664,65 +703,51 @@ export default function App() {
           </div>
         </main>
       ) : (
-        /* Tab Kedua: Kerangka 9 Kaidah */
+        /* Tab Kedua: Indeks Lengkap 9 Kaidah dari Kitab Dr. Khalid al-Sabt */
         <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
           <div className="bg-white p-5 sm:p-8 rounded-2xl border border-stone-200 shadow-sm space-y-4">
             <span className="text-xs font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-950 px-3 py-1 rounded-full">
-              Landasan Teoretis Penelitian R&D
+              Korpus Lengkap Bab Al-Dhama'ir (Hlm. 398–419)
             </span>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
-              Taksonomi 9 Kaidah Marja' al-Dhamir dalam Qawaid Tafsir
+              9 Kaidah Marja' al-Dhamir dalam Qawa'id al-Tafsir Jam'an wa Dirasatan
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              <strong>Dhamir-Lens</strong> memetakan sembilan kaidah utama penentuan rujukan kata ganti (<em>marja' al-dhamir</em>) dalam Al-Qur'an untuk menjembatani struktur gramatika bahasa Arab dengan istinbath penafsiran para ulama.
+              Seluruh kaidah di bawah ini disusun berdasarkan sistematika bab <em>Al-Dhama'ir</em> karya Dr. Khalid bin Utsman al-Sabt. Klik salah satu kartu kaidah untuk langsung membuka visualisasi ayat-ayat penerapannya.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
-              {TAKSONOMI_9_KAIDAH.map((k) => {
-                const tersedia = k.status === 'Aktif';
-                return (
-                  <div
-                    key={k.no}
-                    className="p-4 rounded-xl border border-stone-200 bg-stone-50/70 flex items-start justify-between gap-3"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="w-7 h-7 rounded-lg bg-emerald-950 text-amber-300 text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5">
-                        {k.no}
+            <div className="space-y-3.5 pt-2">
+              {dhamirData.map((k) => (
+                <button
+                  key={k.id}
+                  onClick={() => {
+                    pilihKaidah(k.id);
+                    setTabAktif('visualisasi');
+                  }}
+                  className="w-full text-left p-4 sm:p-5 rounded-2xl border border-stone-200 bg-stone-50/70 hover:bg-white hover:border-emerald-600 hover:shadow-md transition space-y-2.5"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-7 h-7 rounded-lg bg-emerald-950 text-amber-300 text-xs font-extrabold flex items-center justify-center shrink-0">
+                        {k.nomor_kaidah}
                       </span>
-                      <p className="text-sm font-bold text-slate-800 leading-snug">
-                        {k.judul}
-                      </p>
+                      <span className="text-sm sm:text-base font-extrabold text-slate-900">
+                        {k.judul_kaidah}
+                      </span>
                     </div>
-                    <span
-                      className={`text-xs font-bold px-2.5 py-0.5 rounded-full shrink-0 ${
-                        tersedia
-                          ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
-                          : 'bg-stone-200 text-slate-600'
-                      }`}
-                    >
-                      {k.status}
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+                      {k.daftar_ayat.length} Contoh Ayat →
                     </span>
                   </div>
-                );
-              })}
+                  <p dir="rtl" className="font-arab text-xl sm:text-2xl text-right text-slate-900 leading-relaxed">
+                    {k.redaksi_kaidah}
+                  </p>
+                  <p className="text-xs sm:text-sm text-slate-600">
+                    {k.terjemah_kaidah}
+                  </p>
+                </button>
+              ))}
             </div>
-          </div>
-
-          <div className="bg-emerald-950 text-emerald-100 p-6 rounded-2xl border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <h3 className="text-base font-bold text-white">
-                Identitas Pengembangan Produk Digital
-              </h3>
-              <p className="text-xs sm:text-sm text-emerald-200">
-                Program Studi Ilmu Al-Qur'an dan Tafsir (IAT) • Fakultas Ushuluddin • UIN Sunan Gunung Djati Bandung
-              </p>
-            </div>
-            <button
-              onClick={() => setTabAktif('visualisasi')}
-              className="px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-extrabold text-xs sm:text-sm rounded-xl transition self-start sm:self-auto"
-            >
-              Kembali ke Peta Ayat
-            </button>
           </div>
         </main>
       )}
@@ -730,10 +755,10 @@ export default function App() {
       <footer className="bg-white border-t border-stone-200 py-4 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
           <span>
-            <strong>Dhamir-Lens</strong> — Laboratorium Digital Qawaid Tafsir
+            <strong>Dhamir-Lens</strong> — Laboratorium Digital Qawaid al-Tafsir
           </span>
           <span>
-            Penelitian Pengembangan (R&D) Ilmu Al-Qur'an dan Tafsir
+            Korpus Rujukan: <em>Qawa'id al-Tafsir Jam'an wa Dirasatan</em> (Dr. Khalid bin Utsman al-Sabt)
           </span>
         </div>
       </footer>
