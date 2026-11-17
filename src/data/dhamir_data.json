@@ -16,15 +16,78 @@
         "terjemahan": "Wahai manusia! Sesungguhnya kamu telah bekerja keras menuju Tuhanmu, maka kamu akan menemui-Nya.",
         "marja_eksternal": null,
         "tokens": [
-          { "id": "k1a1_0", "teks": "يَا", "arti": "wahai", "peran": "netral", "jenis_nahwu": "harf nida'", "keterangan_kata": "Harf nida'." },
-          { "id": "k1a1_1", "teks": "أَيُّهَا", "arti": "hai", "peran": "netral", "jenis_nahwu": "munada", "keterangan_kata": "Munada dari nida'." },
-          { "id": "k1a1_2", "teks": "الْإِنسَانُ", "arti": "manusia", "peran": "netral", "jenis_nahwu": "isim dhahir marfu'", "keterangan_kata": "Mukhathab, penerima seruan." },
-          { "id": "k1a1_3", "teks": "إِنَّكَ", "arti": "sesungguhnya kamu", "peran": "netral", "jenis_nahwu": "inna + dhamir muttashil nasb", "keterangan_kata": "Inna penguat; kaf merujuk ke al-insan." },
-          { "id": "k1a1_4", "teks": "كَادِحٌ", "arti": "bekerja keras", "peran": "netral", "jenis_nahwu": "isim fa'il marfu'", "keterangan_kata": "Khabar inna." },
-          { "id": "k1a1_5", "teks": "إِلَى", "arti": "kepada/menuju", "peran": "netral", "jenis_nahwu": "harf jar", "keterangan_kata": "Harf jar." },
-          { "id": "k1a1_6", "teks": "رَبِّكَ", "arti": "Tuhanmu", "peran": "marja", "jenis_nahwu": "isim dhahir majrur (mudhaf)", "keterangan_kata": "Marja' Opsi A: dhamir 'hi' pada famulaqihi kembali ke sini." },
-          { "id": "k1a1_7", "teks": "كَدْحًا", "arti": "kerja keras/amal", "peran": "marja", "jenis_nahwu": "mashdar mansub (maf'ul muthlaq)", "keterangan_kata": "Marja' Opsi B: dhamir 'hi' boleh juga kembali ke sini (amal perbuatan)." },
-          { "id": "k1a1_8", "teks": "فَمُلَاقِيهِ", "arti": "maka kamu akan menemuinya", "peran": "dhamir", "jenis_nahwu": "isim fa'il + dhamir muttashil jar (hi)", "keterangan_kata": "Dhamir 'hi': Opsi A → rabbika; Opsi B → kadhan. Keduanya sahih per Kaidah 1 (Al-Shawa'iq 4/1372)." }
+          {
+            "id": "k1a1_0",
+            "teks": "يَا",
+            "arti": "wahai",
+            "peran": "netral",
+            "jenis_nahwu": "harf nida'",
+            "keterangan_kata": "Harf nida'."
+          },
+          {
+            "id": "k1a1_1",
+            "teks": "أَيُّهَا",
+            "arti": "hai",
+            "peran": "netral",
+            "jenis_nahwu": "munada",
+            "keterangan_kata": "Munada dari nida'."
+          },
+          {
+            "id": "k1a1_2",
+            "teks": "الْإِنسَانُ",
+            "arti": "manusia",
+            "peran": "netral",
+            "jenis_nahwu": "isim dhahir marfu'",
+            "keterangan_kata": "Mukhathab, penerima seruan."
+          },
+          {
+            "id": "k1a1_3",
+            "teks": "إِنَّكَ",
+            "arti": "sesungguhnya kamu",
+            "peran": "netral",
+            "jenis_nahwu": "inna + dhamir muttashil nasb",
+            "keterangan_kata": "Inna penguat; kaf merujuk ke al-insan."
+          },
+          {
+            "id": "k1a1_4",
+            "teks": "كَادِحٌ",
+            "arti": "bekerja keras",
+            "peran": "netral",
+            "jenis_nahwu": "isim fa'il marfu'",
+            "keterangan_kata": "Khabar inna."
+          },
+          {
+            "id": "k1a1_5",
+            "teks": "إِلَى",
+            "arti": "kepada/menuju",
+            "peran": "netral",
+            "jenis_nahwu": "harf jar",
+            "keterangan_kata": "Harf jar."
+          },
+          {
+            "id": "k1a1_6",
+            "teks": "رَبِّكَ",
+            "arti": "Tuhanmu",
+            "peran": "marja",
+            "jenis_nahwu": "isim dhahir majrur (mudhaf)",
+            "keterangan_kata": "Marja' Opsi A: dhamir 'hi' pada famulaqihi kembali ke sini."
+          },
+          {
+            "id": "k1a1_7",
+            "teks": "كَدْحًا",
+            "arti": "kerja keras/amal",
+            "peran": "marja",
+            "jenis_nahwu": "mashdar mansub (maf'ul muthlaq)",
+            "keterangan_kata": "Marja' Opsi B: dhamir 'hi' boleh juga kembali ke sini (amal perbuatan)."
+          },
+          {
+            "id": "k1a1_8",
+            "teks": "فَمُلَاقِيهِ",
+            "arti": "maka kamu akan menemuinya",
+            "peran": "dhamir",
+            "jenis_nahwu": "isim fa'il + dhamir muttashil jar (hi)",
+            "keterangan_kata": "Dhamir 'hi': Opsi A → rabbika; Opsi B → kadhan. Keduanya sahih per Kaidah 1 (Al-Shawa'iq 4/1372)."
+          }
         ],
         "perspektif": [
           {
@@ -35,8 +98,20 @@
             "qarinah": "Ketiadaan dalil (mani') yang saling menggugurkan kedua makna tersebut.",
             "rujukan": "Al-Shawa'iq al-Mursalah: 4/1372",
             "panah": [
-              { "dari": "k1a1_8", "ke": "k1a1_6", "label": "famulaqihi → Rabbika", "penjelasan_singkat": "Engkau akan menemui Tuhanmu.", "warna": "#2563eb" },
-              { "dari": "k1a1_8", "ke": "k1a1_7", "label": "famulaqihi → kadhan", "penjelasan_singkat": "Engkau akan menemui amalmu.", "warna": "#4f46e5" }
+              {
+                "dari": "k1a1_8",
+                "ke": "k1a1_6",
+                "label": "famulaqihi → Rabbika",
+                "penjelasan_singkat": "Engkau akan menemui Tuhanmu.",
+                "warna": "#2563eb"
+              },
+              {
+                "dari": "k1a1_8",
+                "ke": "k1a1_7",
+                "label": "famulaqihi → kadhan",
+                "penjelasan_singkat": "Engkau akan menemui amalmu.",
+                "warna": "#4f46e5"
+              }
             ]
           }
         ]
@@ -46,18 +121,88 @@
         "surah_ayat": "QS. Thaha [20]: 110",
         "label_kategori": "Dua makna Ibnu al-Qayyim",
         "terjemahan": "Dia mengetahui apa yang ada di hadapan mereka dan apa yang ada di belakang mereka, sedangkan ilmu mereka tidak dapat meliputi-Nya.",
-        "marja_eksternal": null,
+        "marja_eksternal": "اللَّهُ (Allah SWT)",
         "tokens": [
-          { "id": "k1a2_0", "teks": "يَعْلَمُ", "arti": "Dia mengetahui", "peran": "netral", "jenis_nahwu": "fi'il mudhari' marfu'", "keterangan_kata": "Fa'il mustatir 'huwa' = Allah." },
-          { "id": "k1a2_1", "teks": "مَا", "arti": "apa", "peran": "netral", "jenis_nahwu": "isim maushul", "keterangan_kata": "Maf'ul 'yalamu'." },
-          { "id": "k1a2_2", "teks": "بَيْنَ", "arti": "di hadapan/antara", "peran": "netral", "jenis_nahwu": "zharaf makan", "keterangan_kata": "Shilah al-maushul." },
-          { "id": "k1a2_3", "teks": "أَيْدِيهِمْ", "arti": "tangan mereka (kiasan: hadapan)", "peran": "marja", "jenis_nahwu": "isim dhahir majrur + dhamir jamak", "keterangan_kata": "Marja' Opsi B bersama 'ma khalafahum': keseluruhan yang diketahui Allah tentang mereka." },
-          { "id": "k1a2_4", "teks": "وَمَا", "arti": "dan apa", "peran": "netral", "jenis_nahwu": "waw 'athf + isim maushul", "keterangan_kata": "Ma'thuf ke 'ma bayna'." },
-          { "id": "k1a2_5", "teks": "خَلْفَهُمْ", "arti": "di belakang mereka", "peran": "netral", "jenis_nahwu": "zharaf makan majrur", "keterangan_kata": "Shilah al-maushul kedua." },
-          { "id": "k1a2_6", "teks": "وَلَا", "arti": "dan tidak", "peran": "netral", "jenis_nahwu": "waw 'athf + la nafiyah", "keterangan_kata": "Nafi." },
-          { "id": "k1a2_7", "teks": "يُحِيطُونَ", "arti": "mereka dapat meliputi", "peran": "netral", "jenis_nahwu": "fi'il mudhari' marfu' (jamak)", "keterangan_kata": "Fa'il: manusia/makhluk." },
-          { "id": "k1a2_8", "teks": "بِهِ", "arti": "dengan-Nya/dengannya", "peran": "dhamir", "jenis_nahwu": "ba jar + dhamir muttashil jar (hi)", "keterangan_kata": "Dhamir 'hi': Opsi A → Allah. Opsi B → 'ma bayna aydiihim wa ma khalfahum'. Ibnu al-Qayyim: B melazimkan A (Al-Shawa'iq 4/1372)." },
-          { "id": "k1a2_9", "teks": "عِلْمًا", "arti": "pengetahuan", "peran": "netral", "jenis_nahwu": "mashdar mansub (tamyiz)", "keterangan_kata": "Tamyiz." }
+          {
+            "id": "k1a2_0",
+            "teks": "يَعْلَمُ",
+            "arti": "Dia mengetahui",
+            "peran": "netral",
+            "jenis_nahwu": "fi'il mudhari' marfu'",
+            "keterangan_kata": "Fa'il mustatir 'huwa' = Allah."
+          },
+          {
+            "id": "k1a2_1",
+            "teks": "مَا",
+            "arti": "apa",
+            "peran": "netral",
+            "jenis_nahwu": "isim maushul",
+            "keterangan_kata": "Maf'ul 'yalamu'."
+          },
+          {
+            "id": "k1a2_2",
+            "teks": "بَيْنَ",
+            "arti": "di hadapan/antara",
+            "peran": "netral",
+            "jenis_nahwu": "zharaf makan",
+            "keterangan_kata": "Shilah al-maushul."
+          },
+          {
+            "id": "k1a2_3",
+            "teks": "أَيْدِيهِمْ",
+            "arti": "tangan mereka (kiasan: hadapan)",
+            "peran": "marja",
+            "jenis_nahwu": "isim dhahir majrur + dhamir jamak",
+            "keterangan_kata": "Marja' Opsi B bersama 'ma khalafahum': keseluruhan yang diketahui Allah tentang mereka."
+          },
+          {
+            "id": "k1a2_4",
+            "teks": "وَمَا",
+            "arti": "dan apa",
+            "peran": "netral",
+            "jenis_nahwu": "waw 'athf + isim maushul",
+            "keterangan_kata": "Ma'thuf ke 'ma bayna'."
+          },
+          {
+            "id": "k1a2_5",
+            "teks": "خَلْفَهُمْ",
+            "arti": "di belakang mereka",
+            "peran": "netral",
+            "jenis_nahwu": "zharaf makan majrur",
+            "keterangan_kata": "Shilah al-maushul kedua."
+          },
+          {
+            "id": "k1a2_6",
+            "teks": "وَلَا",
+            "arti": "dan tidak",
+            "peran": "netral",
+            "jenis_nahwu": "waw 'athf + la nafiyah",
+            "keterangan_kata": "Nafi."
+          },
+          {
+            "id": "k1a2_7",
+            "teks": "يُحِيطُونَ",
+            "arti": "mereka dapat meliputi",
+            "peran": "netral",
+            "jenis_nahwu": "fi'il mudhari' marfu' (jamak)",
+            "keterangan_kata": "Fa'il: manusia/makhluk."
+          },
+          {
+            "id": "k1a2_8",
+            "teks": "بِهِ",
+            "arti": "dengan-Nya/dengannya",
+            "peran": "dhamir",
+            "jenis_nahwu": "ba jar + dhamir muttashil jar (hi)",
+            "keterangan_kata": "Dhamir 'hi': Opsi A → Allah. Opsi B → 'ma bayna aydiihim wa ma khalfahum'. Ibnu al-Qayyim: B melazimkan A (Al-Shawa'iq 4/1372)."
+          },
+          {
+            "id": "k1a2_9",
+            "teks": "عِلْمًا",
+            "arti": "pengetahuan",
+            "peran": "netral",
+            "jenis_nahwu": "mashdar mansub (tamyiz)",
+            "keterangan_kata": "Tamyiz."
+          }
         ],
         "perspektif": [
           {
@@ -68,8 +213,20 @@
             "qarinah": "Logika kelaziman (talazum): jika tidak meliputi sebagian ilmu-Nya, apalagi Dzat-Nya secara mutlak.",
             "rujukan": "Al-Shawa'iq al-Mursalah: 4/1372",
             "panah": [
-              { "dari": "k1a2_8", "ke": "external", "label": "bihi → Allah", "penjelasan_singkat": "Ilmu mereka tidak meliputi Allah.", "warna": "#2563eb" },
-              { "dari": "k1a2_8", "ke": "k1a2_3", "label": "bihi → ma bayna aydiihim...", "penjelasan_singkat": "Mereka tidak meliputi ilmu tentang diri mereka.", "warna": "#4f46e5" }
+              {
+                "dari": "k1a2_8",
+                "ke": "external",
+                "label": "bihi → Allah",
+                "penjelasan_singkat": "Ilmu mereka tidak meliputi Allah.",
+                "warna": "#2563eb"
+              },
+              {
+                "dari": "k1a2_8",
+                "ke": "k1a2_3",
+                "label": "bihi → ma bayna aydiihim...",
+                "penjelasan_singkat": "Mereka tidak meliputi ilmu tentang diri mereka.",
+                "warna": "#4f46e5"
+              }
             ]
           }
         ]
@@ -79,16 +236,72 @@
         "surah_ayat": "QS. Al-Baqarah [2]: 255",
         "label_kategori": "Idhafah mashdar: fa'il atau maf'ul",
         "terjemahan": "Dan mereka tidak mengetahui apa pun dari ilmu-Nya melainkan apa yang Dia kehendaki.",
-        "marja_eksternal": null,
+        "marja_eksternal": "اللَّهُ (Fa'il) / مَا بَيْنَ أَيْدِيهِمْ (Maf'ul)",
         "tokens": [
-          { "id": "k1a3_0", "teks": "وَلَا", "arti": "dan tidak", "peran": "netral", "jenis_nahwu": "waw 'athf + la nafiyah", "keterangan_kata": "Nafi." },
-          { "id": "k1a3_1", "teks": "يُحِيطُونَ", "arti": "mereka dapat meliputi", "peran": "netral", "jenis_nahwu": "fi'il mudhari' marfu' (jamak)", "keterangan_kata": "Fa'il: manusia/makhluk." },
-          { "id": "k1a3_2", "teks": "بِشَيْءٍ", "arti": "dengan sesuatu pun", "peran": "netral", "jenis_nahwu": "ba jar + isim nakirah majrur", "keterangan_kata": "Maf'ul bihi." },
-          { "id": "k1a3_3", "teks": "مِنْ", "arti": "dari", "peran": "netral", "jenis_nahwu": "harf jar (tab'idhiyyah)", "keterangan_kata": "Min tab'idh." },
-          { "id": "k1a3_4", "teks": "عِلْمِهِ", "arti": "ilmu-Nya", "peran": "dhamir", "jenis_nahwu": "mashdar majrur (mudhaf) + dhamir hi (mudhaf ilayh)", "keterangan_kata": "Dhamir 'hi': Opsi A → idhafah ke fa'il (ilmu milik Allah). Opsi B → idhafah ke maf'ul (ilmu tentang sesuatu yang diketahui). Keduanya sahih per Kaidah 1 (Al-Shawa'iq 4/1372)." },
-          { "id": "k1a3_5", "teks": "إِلَّا", "arti": "kecuali", "peran": "netral", "jenis_nahwu": "adat istitsna'", "keterangan_kata": "Istitsna'." },
-          { "id": "k1a3_6", "teks": "بِمَا", "arti": "dengan apa", "peran": "netral", "jenis_nahwu": "ba jar + isim maushul", "keterangan_kata": "Istitsna'." },
-          { "id": "k1a3_7", "teks": "شَاءَ", "arti": "Dia kehendaki", "peran": "netral", "jenis_nahwu": "fi'il madhi", "keterangan_kata": "Fa'il mustatir 'huwa' = Allah." }
+          {
+            "id": "k1a3_0",
+            "teks": "وَلَا",
+            "arti": "dan tidak",
+            "peran": "netral",
+            "jenis_nahwu": "waw 'athf + la nafiyah",
+            "keterangan_kata": "Nafi."
+          },
+          {
+            "id": "k1a3_1",
+            "teks": "يُحِيطُونَ",
+            "arti": "mereka dapat meliputi",
+            "peran": "netral",
+            "jenis_nahwu": "fi'il mudhari' marfu' (jamak)",
+            "keterangan_kata": "Fa'il: manusia/makhluk."
+          },
+          {
+            "id": "k1a3_2",
+            "teks": "بِشَيْءٍ",
+            "arti": "dengan sesuatu pun",
+            "peran": "netral",
+            "jenis_nahwu": "ba jar + isim nakirah majrur",
+            "keterangan_kata": "Maf'ul bihi."
+          },
+          {
+            "id": "k1a3_3",
+            "teks": "مِنْ",
+            "arti": "dari",
+            "peran": "netral",
+            "jenis_nahwu": "harf jar (tab'idhiyyah)",
+            "keterangan_kata": "Min tab'idh."
+          },
+          {
+            "id": "k1a3_4",
+            "teks": "عِلْمِهِ",
+            "arti": "ilmu-Nya",
+            "peran": "dhamir",
+            "jenis_nahwu": "mashdar majrur (mudhaf) + dhamir hi (mudhaf ilayh)",
+            "keterangan_kata": "Dhamir 'hi': Opsi A → idhafah ke fa'il (ilmu milik Allah). Opsi B → idhafah ke maf'ul (ilmu tentang sesuatu yang diketahui). Keduanya sahih per Kaidah 1 (Al-Shawa'iq 4/1372)."
+          },
+          {
+            "id": "k1a3_5",
+            "teks": "إِلَّا",
+            "arti": "kecuali",
+            "peran": "netral",
+            "jenis_nahwu": "adat istitsna'",
+            "keterangan_kata": "Istitsna'."
+          },
+          {
+            "id": "k1a3_6",
+            "teks": "بِمَا",
+            "arti": "dengan apa",
+            "peran": "netral",
+            "jenis_nahwu": "ba jar + isim maushul",
+            "keterangan_kata": "Istitsna'."
+          },
+          {
+            "id": "k1a3_7",
+            "teks": "شَاءَ",
+            "arti": "Dia kehendaki",
+            "peran": "netral",
+            "jenis_nahwu": "fi'il madhi",
+            "keterangan_kata": "Fa'il mustatir 'huwa' = Allah."
+          }
         ],
         "perspektif": [
           {
@@ -99,8 +312,20 @@
             "qarinah": "Konteks Ayat Kursi: membicarakan keagungan ilmu Allah dan kelemahan ilmu makhluk.",
             "rujukan": "Al-Shawa'iq al-Mursalah: 4/1372",
             "panah": [
-              { "dari": "k1a3_4", "ke": "external", "label": "ilmihi → Allah (fa'il)", "penjelasan_singkat": "Ilmu milik Allah yang tidak terbatas.", "warna": "#2563eb" },
-              { "dari": "k1a3_4", "ke": "external", "label": "ilmihi → ma'lum (objek ilmu)", "penjelasan_singkat": "Objek ilmu Allah yang tak terbatas.", "warna": "#4f46e5" }
+              {
+                "dari": "k1a3_4",
+                "ke": "external",
+                "label": "ilmihi → Allah (fa'il)",
+                "penjelasan_singkat": "Ilmu milik Allah yang tidak terbatas.",
+                "warna": "#2563eb"
+              },
+              {
+                "dari": "k1a3_4",
+                "ke": "external",
+                "label": "ilmihi → ma'lum (objek ilmu)",
+                "penjelasan_singkat": "Objek ilmu Allah yang tak terbatas.",
+                "warna": "#4f46e5"
+              }
             ]
           }
         ]
@@ -766,7 +991,7 @@
         "surah_ayat": "QS. Al-Hajj [22]: 78",
         "label_kategori": "Dhamir melampaui lafaz terdekat (Ibrahim) ke Allah",
         "terjemahan": "(Ikutilah) agama nenek moyangmu Ibrahim. Dia (Allah) telah menamai kamu sekalian orang-orang muslim sejak dahulu, dan (begitu pula) dalam (Al-Qur'an) ini.",
-        "marja_eksternal": null,
+        "marja_eksternal": "اللَّهُ (Allah SWT)",
         "catatan_verifikasi": "Pembahasan lengkap dua pendapat (Allah vs Ibrahim) beserta nama ulama dan dua qarinah Asy-Syinqithi ada di k9-a3.",
         "tokens": [
           {
@@ -861,7 +1086,7 @@
             "panah": [
               {
                 "dari": "k3a3_3",
-                "ke": null,
+                "ke": "external",
                 "label": "huwa → Allah",
                 "penjelasan_singkat": "Allah yang menamai umat ini muslimin.",
                 "warna": "#db2777"
@@ -892,7 +1117,7 @@
         "surah_ayat": "QS. Yasin [36]: 37",
         "label_kategori": "Dhamir berakal tidak kembali ke benda",
         "terjemahan": "Dan suatu tanda (kebesaran Allah) bagi mereka adalah malam; Kami tanggalkan siang dari malam itu, maka seketika itu mereka berada dalam kegelapan.",
-        "marja_eksternal": null,
+        "marja_eksternal": "النَّاسُ (Manusia / Mereka)",
         "tokens": [
           {
             "id": "k3a4_0",
@@ -978,7 +1203,7 @@
             "panah": [
               {
                 "dari": "k3a4_7",
-                "ke": null,
+                "ke": "external",
                 "label": "hum → manusia (dari 'lahum')",
                 "penjelasan_singkat": "Mereka (manusia) berada dalam kegelapan malam.",
                 "warna": "#db2777"
@@ -992,7 +1217,7 @@
         "surah_ayat": "QS. Yasin [36]: 81",
         "label_kategori": "Dhamir ke pihak yang relevan, bukan lafaz terdekat",
         "terjemahan": "Dan bukankah (Allah) yang menciptakan langit dan bumi itu mampu menciptakan kembali yang serupa dengan mereka (yang telah mati)?",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْكُفَّارُ (Kaum Kafir)",
         "tokens": [
           {
             "id": "k3a5_0",
@@ -1086,7 +1311,7 @@
             "panah": [
               {
                 "dari": "k3a5_9",
-                "ke": null,
+                "ke": "external",
                 "label": "mitslahum → kaum kafir",
                 "penjelasan_singkat": "Allah mampu menciptakan kembali serupa mereka (kaum kafir).",
                 "warna": "#db2777"
@@ -2104,7 +2329,7 @@
         "surah_ayat": "QS. Al-Baqarah [2]: 229",
         "label_kategori": "Dhamir ganda, hukum khusus untuk suami saja",
         "terjemahan": "Maka tidak ada dosa atas keduanya tentang bayaran yang diberikan oleh istri untuk menebus dirinya.",
-        "marja_eksternal": null,
+        "marja_eksternal": "الزَّوْجُ (Suami yang Menerima Tebusan)",
         "catatan_verifikasi": "PERLU-CEK: Label panah 'khusus pihak suami' benar secara analisis (tidak ada dosa BAGI SUAMI dalam menerima tebusan). Namun 'fa-iftadat' dalam ayat menunjuk tindakan ISTRI (yang membayar tebusan). Pastikan panah menuju token yang tepat sesuai tafsir kitab: kitab (hlm. 409) menyatakan maksud 'alayhima adalah khusus suami.",
         "tokens": [
           {
@@ -2167,7 +2392,7 @@
             "panah": [
               {
                 "dari": "k6a2_2",
-                "ke": null,
+                "ke": "external",
                 "label": "'alayhima → khusus suami",
                 "penjelasan_singkat": "Tatsniyah namun hukumnya khusus untuk suami yang menerima tebusan.",
                 "warna": "#059669"
@@ -2181,7 +2406,7 @@
         "surah_ayat": "QS. Ar-Rahman [55]: 22",
         "label_kategori": "Dhamir ganda, mutiara mungkin dari salah satunya",
         "terjemahan": "Dari keduanya keluar mutiara dan marjan.",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْبَحْرَيْنِ (Dua Lautan: Tawar & Asin)",
         "catatan_verifikasi": "PERLU-CEK (Ar-Rahman 22): Teks sumber menyebut pendapat bahwa mutiara hanya keluar dari 'air tawar' (al-'adzb duna al-milh). Namun terasa janggal karena mutiara umumnya dikenal dari laut asin. Ibnu Jarir sendiri mentarjih bahwa keduanya mengeluarkan mutiara—sehingga menurut beliau ayat ini TIDAK SAH dijadikan contoh Kaidah 6. Perlu verifikasi ke cetakan asli kitab sebelum dipakai sebagai konten final.",
         "tokens": [
           {
@@ -2228,7 +2453,7 @@
             "panah": [
               {
                 "dari": "k6a3_1",
-                "ke": null,
+                "ke": "external",
                 "label": "minhuma → salah satu laut",
                 "penjelasan_singkat": "Tatsniyah namun mutiara hanya dari salah satunya.",
                 "warna": "#059669"
@@ -2245,7 +2470,7 @@
             "panah": [
               {
                 "dari": "k6a3_1",
-                "ke": null,
+                "ke": "external",
                 "label": "minhuma → keduanya (menurut Ibnu Jarir: bukan Kaidah 6)",
                 "penjelasan_singkat": "Ibnu Jarir: keduanya mengeluarkan—bukan contoh Kaidah 6.",
                 "warna": "#b45309"
@@ -2271,7 +2496,7 @@
         "surah_ayat": "QS. Ar-Rahman [55]: 26",
         "label_kategori": "Dhamir ke al-ardh yang tidak disebut",
         "terjemahan": "Semua yang ada di bumi itu akan binasa.",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْأَرْضُ (Bumi)",
         "tokens": [
           {
             "id": "k7a1_0",
@@ -2317,7 +2542,7 @@
             "panah": [
               {
                 "dari": "k7a1_2",
-                "ke": null,
+                "ke": "external",
                 "label": "alayha → al-ardh (tidak tersebut)",
                 "penjelasan_singkat": "Bumi dipahami dari konteks surah Ar-Rahman.",
                 "warna": "#d97706"
@@ -2331,7 +2556,7 @@
         "surah_ayat": "QS. Shad [38]: 32",
         "label_kategori": "Dhamir ke matahari yang tidak disebut",
         "terjemahan": "Hingga ia (matahari) terbenam di balik tirai (malam).",
-        "marja_eksternal": null,
+        "marja_eksternal": "الشَّمْسُ (Matahari)",
         "tokens": [
           {
             "id": "k7a2_0",
@@ -2369,7 +2594,7 @@
             "panah": [
               {
                 "dari": "k7a2_1",
-                "ke": null,
+                "ke": "external",
                 "label": "tawarat → asy-syams (tidak tersebut)",
                 "penjelasan_singkat": "Matahari terbenam—dipahami dari konteks kisah Sulaiman.",
                 "warna": "#d97706"
@@ -2383,7 +2608,7 @@
         "surah_ayat": "QS. Al-Qiyamah [75]: 26",
         "label_kategori": "Dhamir ke an-nafs yang tidak disebut",
         "terjemahan": "Sekali-kali tidak! Apabila (nyawa) telah sampai ke kerongkongan.",
-        "marja_eksternal": null,
+        "marja_eksternal": "النَّفْسُ / الرُّوحُ (Nyawa/Roh)",
         "tokens": [
           {
             "id": "k7a3_0",
@@ -2429,7 +2654,7 @@
             "panah": [
               {
                 "dari": "k7a3_2",
-                "ke": null,
+                "ke": "external",
                 "label": "balaghat → an-nafs (tidak tersebut)",
                 "penjelasan_singkat": "Nyawa sampai ke kerongkongan—dipahami dari konteks sakaratul maut.",
                 "warna": "#d97706"
@@ -2443,7 +2668,7 @@
         "surah_ayat": "QS. Al-Waqi'ah [56]: 83",
         "label_kategori": "Pola yang sama dengan Al-Qiyamah: 26",
         "terjemahan": "Maka mengapa ketika (nyawa) sampai di kerongkongan...",
-        "marja_eksternal": null,
+        "marja_eksternal": "النَّفْسُ / الرُّوحُ (Nyawa/Roh)",
         "tokens": [
           {
             "id": "k7a4_0",
@@ -2489,7 +2714,7 @@
             "panah": [
               {
                 "dari": "k7a4_2",
-                "ke": null,
+                "ke": "external",
                 "label": "balaghat → an-nafs (tidak tersebut)",
                 "penjelasan_singkat": "Nyawa di kerongkongan—pola sama dengan Al-Qiyamah: 26.",
                 "warna": "#d97706"
@@ -2503,7 +2728,7 @@
         "surah_ayat": "QS. Al-Qadr [97]: 1",
         "label_kategori": "Dhamir ke Al-Qur'an yang tidak disebut",
         "terjemahan": "Sesungguhnya Kami telah menurunkannya pada malam kemuliaan.",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْقُرْآنُ (Al-Qur'an)",
         "tokens": [
           {
             "id": "k7a5_0",
@@ -2557,7 +2782,7 @@
             "panah": [
               {
                 "dari": "k7a5_1",
-                "ke": null,
+                "ke": "external",
                 "label": "anzalnahu → Al-Qur'an (tidak tersebut)",
                 "penjelasan_singkat": "Al-Qur'an diturunkan—dipahami dari konteks surah Al-Qadr.",
                 "warna": "#d97706"
@@ -2571,7 +2796,7 @@
         "surah_ayat": "QS. Fathir [35]: 45",
         "label_kategori": "Dhamir ke al-ardh yang tidak disebut",
         "terjemahan": "...dan tidak satu pun makhluk bergerak (bernyawa) di atas permukaannya (bumi)...",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْأَرْضُ (Bumi)",
         "tokens": [
           {
             "id": "k7a6_0",
@@ -2625,7 +2850,7 @@
             "panah": [
               {
                 "dari": "k7a6_4",
-                "ke": null,
+                "ke": "external",
                 "label": "zhahriha → al-ardh (tidak tersebut)",
                 "penjelasan_singkat": "Permukaan bumi—dipahami dari konteks.",
                 "warna": "#d97706"
@@ -2639,7 +2864,7 @@
         "surah_ayat": "QS. Yusuf [12]: 77",
         "label_kategori": "Dhamir kinayah ke al-kalimah (tidak tersebut)",
         "terjemahan": "Maka Yusuf menyembunyikannya (perkataan itu) dalam hatinya.",
-        "marja_eksternal": null,
+        "marja_eksternal": "الْكَلِمَةُ (Ucapan)",
         "catatan_verifikasi": "Teks Arab menggunakan فَأَسَرَّهَا sesuai berkas—bukan فَأَسْرِ بِأَهْلِكَ. Ibnu Jarir membahas dhamir mu'annats pada 'asarraha' sebagai kinayah untuk 'al-kalimah'.",
         "tokens": [
           {
@@ -2686,7 +2911,7 @@
             "panah": [
               {
                 "dari": "k7a7_0",
-                "ke": null,
+                "ke": "external",
                 "label": "asarraha → al-kalimah (kinayah, tidak tersebut)",
                 "penjelasan_singkat": "Ucapan Yusuf yang disembunyikan—dipahami dari konteks.",
                 "warna": "#d97706"
@@ -3176,7 +3401,7 @@
         "surah_ayat": "QS. Az-Zukhruf [43]: 61",
         "label_kategori": "Dhamir ke Isa AS (dengan dalil QS. An-Nisa': 159)",
         "terjemahan": "Dan sesungguhnya dia (Isa) benar-benar menjadi tanda akan datangnya hari kiamat, maka janganlah kamu ragu-ragu tentang hari kiamat itu.",
-        "marja_eksternal": null,
+        "marja_eksternal": "عِيسَى ابْنُ مَرْيَمَ (Nabi Isa AS)",
         "tokens": [
           {
             "id": "k9a2_0",
@@ -3238,7 +3463,7 @@
             "panah": [
               {
                 "dari": "k9a2_0",
-                "ke": null,
+                "ke": "external",
                 "label": "innahu → Isa AS",
                 "penjelasan_singkat": "Isa adalah tanda hari kiamat—lafaz 'Isa' disebut eksplisit di konteks sebelumnya.",
                 "warna": "#6d28d9"
@@ -3252,7 +3477,7 @@
         "surah_ayat": "QS. Al-Hajj [22]: 78",
         "label_kategori": "Pembahasan lengkap dua qarinah Asy-Syinqithi",
         "terjemahan": "(Ikutilah) agama nenek moyangmu Ibrahim. Dia (Allah) telah menamai kamu sekalian orang-orang muslim sejak dahulu, dan (begitu pula) dalam (Al-Qur'an) ini.",
-        "marja_eksternal": null,
+        "marja_eksternal": "اللَّهُ (Allah SWT)",
         "catatan_verifikasi": "Pembahasan ini melengkapi k3-a3 (di mana hanya disebut ringkas). Di sini: nama-nama ulama kedua pendapat, dua qarinah Asy-Syinqithi, dan dalil Ibnu Zaid (QS. Al-Baqarah: 128).",
         "tokens": [
           {
@@ -3347,7 +3572,7 @@
             "panah": [
               {
                 "dari": "k9a3_3",
-                "ke": null,
+                "ke": "external",
                 "label": "huwa → Allah (Kaidah 9 + 2 qarinah)",
                 "penjelasan_singkat": "Allah yang menamai umat ini muslimin—dikuatkan dua qarinah.",
                 "warna": "#6d28d9"
@@ -3378,7 +3603,7 @@
         "surah_ayat": "QS. Thaha [20]: 39",
         "label_kategori": "Dhamir berurutan ke Musa AS (Kaidah 9)",
         "terjemahan": "(Yaitu): 'Letakkanlah dia (Musa) dalam peti, kemudian lemparkanlah ia ke sungai (Nil), maka pastilah sungai itu membawanya ke tepi'.",
-        "marja_eksternal": null,
+        "marja_eksternal": "مُوسَى (Nabi Musa AS)",
         "tokens": [
           {
             "id": "k9a4_0",
@@ -3472,21 +3697,21 @@
             "panah": [
               {
                 "dari": "k9a4_1",
-                "ke": null,
+                "ke": "external",
                 "label": "iqdzifihi (1) → Musa AS",
                 "penjelasan_singkat": "Letakkan Musa dalam peti.",
                 "warna": "#6d28d9"
               },
               {
                 "dari": "k9a4_4",
-                "ke": null,
+                "ke": "external",
                 "label": "iqdzifihi (2) → Musa AS",
                 "penjelasan_singkat": "Lemparkan Musa ke sungai—bukan peti.",
                 "warna": "#6d28d9"
               },
               {
                 "dari": "k9a4_7",
-                "ke": null,
+                "ke": "external",
                 "label": "fal-yulqihi → Musa AS",
                 "penjelasan_singkat": "Sungai membawa Musa ke tepi.",
                 "warna": "#6d28d9"
@@ -3500,7 +3725,7 @@
         "surah_ayat": "QS. Yusuf [12]: 52-53",
         "label_kategori": "Dhamir berurutan: perkataan istri Al-'Aziz (Kaidah 9)",
         "terjemahan": "Yang demikian itu agar dia mengetahui bahwa aku tidak mengkhianatinya ketika dia tidak ada, dan bahwa Allah tidak meridai tipu daya orang-orang yang berkhianat. Dan aku tidak (pula) membebaskan diriku (dari kesalahan)... (perkataan istri Al-'Aziz)",
-        "marja_eksternal": null,
+        "marja_eksternal": "امْرَأَتُ الْعَزِيزِ (Istri Al-'Aziz)",
         "tokens": [
           {
             "id": "k9a5_0",
@@ -3634,7 +3859,7 @@
             "panah": [
               {
                 "dari": "k9a5_14",
-                "ke": null,
+                "ke": "external",
                 "label": "nafsi → istri Al-'Aziz",
                 "penjelasan_singkat": "Istri Al-'Aziz mengakui kesalahannya—dikuatkan kesatuan marja' 5 dhamir sebelumnya.",
                 "warna": "#6d28d9"
@@ -3779,7 +4004,7 @@
         "surah_ayat": "QS. Al-Kahfi [18]: 22",
         "label_kategori": "Bagian b: pemisahan marja' karena tanafur",
         "terjemahan": "Maka janganlah engkau (Muhammad) berbantah tentang hal mereka, kecuali perbantahan lahir saja, dan jangan engkau menanyakan tentang mereka (pemuda Kahfi) kepada seorang pun di antara mereka (Yahudi).",
-        "marja_eksternal": null,
+        "marja_eksternal": "أَصْحَابُ الْكَهْفِ (Pemuda) & الْيَهُودُ (Yahudi)",
         "catatan_verifikasi": "PERLU-CEK (Al-Kahfi 22): Dua hal: (1) Kitab menyebut 'untuk Yahudi', bukan 'Ahli Kitab' umum. (2) Panah مِنْهُمْ menuju أَحَدًا—perhatikan bahwa أَحَدًا adalah maf'ul (penerima larangan bertanya), bukan marja' dhamir. Panah dari 'minhum' ke 'ahadan' menjelaskan siapa yang dimaksud 'minhum' (Yahudi), bukan bahwa 'ahadan' adalah marja' dalam pengertian dhamir.",
         "tokens": [
           {
@@ -3882,21 +4107,21 @@
             "panah": [
               {
                 "dari": "k9a7_2",
-                "ke": null,
+                "ke": "external",
                 "label": "fihim (1) → Ashabul Kahfi",
                 "penjelasan_singkat": "Tentang pemuda Kahfi—jangan berbantah.",
                 "warna": "#6d28d9"
               },
               {
                 "dari": "k9a7_8",
-                "ke": null,
+                "ke": "external",
                 "label": "fihim (2) → Ashabul Kahfi",
                 "penjelasan_singkat": "Tentang pemuda Kahfi—jangan bertanya.",
                 "warna": "#6d28d9"
               },
               {
                 "dari": "k9a7_9",
-                "ke": null,
+                "ke": "external",
                 "label": "minhum → Yahudi (berbeda: tanafur)",
                 "penjelasan_singkat": "PERLU-CEK: Yahudi—pemisahan marja' karena tanafur.",
                 "warna": "#b45309"
