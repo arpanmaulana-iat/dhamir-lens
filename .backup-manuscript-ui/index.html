@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Dhamir-Lens — Laboratorium Digital Qawaid Marja' al-Dhamir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #root {
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        width: 100% !important;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #f4f3ee;
+        color: #0f172a;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      header h1 {
+        color: #ffffff !important;
+      }
+      .font-arab {
+        font-family: 'Scheherazade New', 'Amiri', serif;
+        font-feature-settings: "liga" 1, "calt" 1;
+      }
+      .kanvas-mushaf {
+        background-color: #fcfbf7;
+        background-image: radial-gradient(#d6d3c9 0.75px, transparent 0.75px);
+        background-size: 18px 18px;
+      }
+      @keyframes dashFlow {
+        to {
+          stroke-dashoffset: -20;
+        }
+      }
+      .animate-panah {
+        animation: dashFlow 1s linear infinite;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.22s ease-out forwards;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="text-slate-900 antialiased selection:bg-amber-200 selection:text-emerald-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

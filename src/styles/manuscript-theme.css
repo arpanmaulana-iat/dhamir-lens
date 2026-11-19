@@ -1,0 +1,814 @@
+/* ==========================================================================
+   DHAMIR-LENS — DIGITAL MANUSCRIPT STUDIO v3 (PRODI IAT UIN SGD BANDUNG)
+   3 Tema Terkurasi: Kertas Mushaf (Default Terang), Sepia Turats, Zamrud Malam
+   Fitur: Tombol Strip Kiri Atas (☰) + Studio Drawer + Skala Khat + Mode Fokus + PDF
+   ========================================================================== */
+
+:root,
+html[data-theme="kertas"] {
+  --dl-bg: #F6F0E4;
+  --dl-bg2: #ECE3D0;
+  --dl-surf: #FFFDF8;
+  --dl-surf2: #F7F1E3;
+  --dl-panel: #F2E9D6;
+  --dl-ink: #1B2A24;
+  --dl-ink-soft: #3D5048;
+  --dl-muted: #687870;
+  --dl-gold: #9A6B16;
+  --dl-gold-hi: #C89E46;
+  --dl-gold-deep: #78500D;
+  --dl-line: #E2D5BA;
+  --dl-line-strong: #C9A455;
+  --dl-accent: #0F6B56;
+  --dl-accent-bg: #E6F3EE;
+  --dl-canvas-a: #FFFDF9;
+  --dl-canvas-b: #F8F1E1;
+  --dl-header-bg: #FBF6EC;
+  --dl-header-ink: #1B2A24;
+  --dl-header-sub: #66756D;
+  --dl-nav-track: #EFE6D3;
+  --dl-nav-active-bg: #9A6B16;
+  --dl-nav-active-ink: #FFFDF8;
+  --dl-shadow: 0 14px 34px -22px rgba(56, 42, 18, 0.22), 0 3px 10px -4px rgba(56, 42, 18, 0.08);
+  --dl-mesh:
+    radial-gradient(900px 560px at 8% -4%, rgba(200, 158, 70, 0.14), transparent 60%),
+    radial-gradient(760px 520px at 94% 8%, rgba(15, 107, 86, 0.08), transparent 58%),
+    linear-gradient(172deg, #FAF5EB, #F2E9D7 55%, #F6F0E4);
+  --dl-arab-font: "Scheherazade New", "Amiri", serif;
+  --dl-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23000'%3E%3Crect x='5' y='5' width='14' height='14'/%3E%3Crect x='5' y='5' width='14' height='14' transform='rotate(45 12 12)'/%3E%3C/g%3E%3C/svg%3E");
+  --dl-khatam-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%239A6B16' stroke-width='1.1' opacity='0.09'%3E%3Crect x='24' y='24' width='52' height='52'/%3E%3Crect x='24' y='24' width='52' height='52' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='11'/%3E%3C/g%3E%3C/svg%3E");
+  --dl-khatam-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23F2C866' stroke-width='1.2' opacity='0.14'%3E%3Crect x='24' y='24' width='52' height='52'/%3E%3Crect x='24' y='24' width='52' height='52' transform='rotate(45 50 50)'/%3E%3Ccircle cx='50' cy='50' r='11'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html[data-theme="sepia"] {
+  --dl-bg: #EDE1C7;
+  --dl-bg2: #E2D2B1;
+  --dl-surf: #F7EFE0;
+  --dl-surf2: #EFE4CE;
+  --dl-panel: #E8D9BC;
+  --dl-ink: #2C1E12;
+  --dl-ink-soft: #4E3927;
+  --dl-muted: #765E48;
+  --dl-gold: #8A4B16;
+  --dl-gold-hi: #B87932;
+  --dl-gold-deep: #6B360E;
+  --dl-line: #D4BF96;
+  --dl-line-strong: #B08342;
+  --dl-accent: #1D5E4C;
+  --dl-accent-bg: #E0ECE5;
+  --dl-canvas-a: #FBF4E5;
+  --dl-canvas-b: #EFE2C5;
+  --dl-header-bg: #F3E8D1;
+  --dl-header-ink: #2C1E12;
+  --dl-header-sub: #745B43;
+  --dl-nav-track: #E5D6B7;
+  --dl-nav-active-bg: #7A4112;
+  --dl-nav-active-ink: #FDF6E8;
+  --dl-shadow: 0 14px 32px -20px rgba(64, 38, 12, 0.28), 0 3px 10px -4px rgba(64, 38, 12, 0.1);
+  --dl-mesh:
+    radial-gradient(880px 540px at 8% -4%, rgba(176, 131, 66, 0.18), transparent 60%),
+    radial-gradient(760px 500px at 94% 8%, rgba(138, 75, 22, 0.12), transparent 58%),
+    linear-gradient(172deg, #F1E6CE, #E6D6B7 55%, #EDE1C7);
+}
+
+html[data-theme="zamrud"] {
+  --dl-bg: #04211B;
+  --dl-bg2: #07332A;
+  --dl-surf: #0A2A23;
+  --dl-surf2: #0E3A30;
+  --dl-panel: #08241E;
+  --dl-ink: #F3EAD8;
+  --dl-ink-soft: #C5D9CF;
+  --dl-muted: #8FA79B;
+  --dl-gold: #F2C866;
+  --dl-gold-hi: #FBE7B4;
+  --dl-gold-deep: #9E7320;
+  --dl-line: #1D4C40;
+  --dl-line-strong: #9E7320;
+  --dl-accent: #3FD9BC;
+  --dl-accent-bg: rgba(14, 124, 99, 0.24);
+  --dl-canvas-a: #0C332B;
+  --dl-canvas-b: #06211B;
+  --dl-header-bg: #031915;
+  --dl-header-ink: #FBE7B4;
+  --dl-header-sub: #9BC4B6;
+  --dl-nav-track: #082F27;
+  --dl-nav-active-bg: #F2C866;
+  --dl-nav-active-ink: #04211B;
+  --dl-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.78), 0 6px 16px -6px rgba(0, 0, 0, 0.5);
+  --dl-mesh:
+    radial-gradient(980px 640px at 8% -6%, rgba(63, 217, 188, 0.16), transparent 62%),
+    radial-gradient(840px 580px at 95% 8%, rgba(242, 200, 102, 0.14), transparent 60%),
+    linear-gradient(170deg, #04211B, #07332A 52%, #04211B);
+}
+
+html[data-arab-font="amiri"] {
+  --dl-arab-font: "Amiri", "Scheherazade New", serif;
+}
+
+/* ---------- Reset & Latar Utama ---------- */
+html[data-theme],
+html[data-theme] body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--dl-bg) !important;
+  background-image: var(--dl-mesh) !important;
+  background-attachment: fixed !important;
+  color: var(--dl-ink) !important;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+html[data-theme] #root {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  text-align: left !important;
+  background: transparent !important;
+}
+
+html[data-theme] #root > div.min-h-screen {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ---------- Tipografi Editorial (Judul Besar Serif, Label Kecil Tetap Tajam Sans) ---------- */
+html[data-theme] h1,
+html[data-theme] h2:not(.text-xs),
+html[data-theme] h3:not(.text-xs) {
+  font-family: "Cormorant Garamond", "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
+  letter-spacing: -0.01em !important;
+}
+
+html[data-theme] h2.text-xs,
+html[data-theme] h3.text-xs {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+  letter-spacing: 0.08em !important;
+}
+
+html[data-theme] .font-arab {
+  font-family: var(--dl-arab-font) !important;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "mark" 1, "mkmk" 1;
+}
+
+/* Skala Khat Arab Aman (Relatif Viewport/Rem, Tidak Merusak Badge Kecil) */
+html[data-arab-scale="sm"] .kanvas-mushaf div.font-arab.flex { font-size: clamp(1.65rem, 3.2vw, 2.45rem) !important; }
+html[data-arab-scale="lg"] .kanvas-mushaf div.font-arab.flex { font-size: clamp(2.25rem, 4.5vw, 3.55rem) !important; }
+html[data-arab-scale="xl"] .kanvas-mushaf div.font-arab.flex { font-size: clamp(2.65rem, 5.3vw, 4.2rem) !important; }
+
+html[data-arab-scale="sm"] .kanvas-mushaf p.font-arab { font-size: clamp(1.3rem, 2.1vw, 1.65rem) !important; }
+html[data-arab-scale="lg"] .kanvas-mushaf p.font-arab { font-size: clamp(1.85rem, 2.9vw, 2.25rem) !important; }
+html[data-arab-scale="xl"] .kanvas-mushaf p.font-arab { font-size: clamp(2.1rem, 3.4vw, 2.6rem) !important; }
+
+/* ---------- Header Adaptif (Terang di Kertas/Sepia, Zamrud di Gelap) ---------- */
+html[data-theme] header {
+  background: var(--dl-header-bg) !important;
+  background-image: var(--dl-khatam-light) !important;
+  background-size: 86px 86px !important;
+  color: var(--dl-header-ink) !important;
+  border-bottom: 1.5px solid var(--dl-line-strong) !important;
+  box-shadow: 0 8px 24px -18px rgba(38, 28, 12, 0.25) !important;
+}
+
+html[data-theme="zamrud"] header {
+  background: linear-gradient(135deg, #031915, #07332A 55%, #031915) !important;
+  background-image: var(--dl-khatam-dark), linear-gradient(135deg, #031915, #07332A 55%, #031915) !important;
+  background-size: 86px 86px, cover !important;
+  border-bottom: 2px solid var(--dl-gold-deep) !important;
+  box-shadow: 0 10px 30px -16px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Ruang aman untuk tombol strip kiri atas (☰) di dalam header */
+html[data-theme] header > div {
+  padding-left: 4.1rem !important;
+}
+@media (min-width: 1420px) {
+  html[data-theme] header > div {
+    padding-left: 2rem !important;
+  }
+}
+
+html[data-theme] header h1 {
+  color: var(--dl-header-ink) !important;
+  font-size: 1.4rem !important;
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+html[data-theme] header .text-emerald-200 {
+  color: var(--dl-header-sub) !important;
+}
+
+/* Logo ض di Header */
+html[data-theme="kertas"] header .bg-amber-500\/20,
+html[data-theme="sepia"] header .bg-amber-500\/20 {
+  background-color: rgba(154, 107, 22, 0.12) !important;
+  border-color: var(--dl-line-strong) !important;
+}
+html[data-theme="kertas"] header .text-amber-300,
+html[data-theme="sepia"] header .text-amber-300 {
+  color: var(--dl-gold) !important;
+}
+
+/* Navigasi Atas di Header */
+html[data-theme] header nav {
+  background-color: var(--dl-nav-track) !important;
+  border-color: var(--dl-line) !important;
+}
+
+html[data-theme="kertas"] header nav button,
+html[data-theme="sepia"] header nav button {
+  color: var(--dl-ink-soft) !important;
+}
+
+html[data-theme="kertas"] header nav button:hover,
+html[data-theme="sepia"] header nav button:hover {
+  background-color: var(--dl-surf) !important;
+  color: var(--dl-ink) !important;
+}
+
+html[data-theme] header nav button.bg-amber-400 {
+  background-color: var(--dl-nav-active-bg) !important;
+  color: var(--dl-nav-active-ink) !important;
+  box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Bottom Navigation Bar di HP */
+html[data-theme="kertas"] nav.fixed.bottom-0,
+html[data-theme="sepia"] nav.fixed.bottom-0 {
+  background-color: var(--dl-header-bg) !important;
+  border-top: 1.5px solid var(--dl-line-strong) !important;
+  color: var(--dl-ink) !important;
+}
+html[data-theme="kertas"] nav.fixed.bottom-0 button.text-emerald-100\/80,
+html[data-theme="sepia"] nav.fixed.bottom-0 button.text-emerald-100\/80 {
+  color: var(--dl-muted) !important;
+}
+html[data-theme="kertas"] nav.fixed.bottom-0 button.text-amber-300,
+html[data-theme="sepia"] nav.fixed.bottom-0 button.text-amber-300 {
+  color: var(--dl-gold) !important;
+}
+
+/* ---------- Kartu Definisi Beranda (Manuskrip Cerah di Kertas/Sepia, Bukan Hijau Gelap) ---------- */
+html[data-theme="kertas"] main .bg-gradient-to-br,
+html[data-theme="sepia"] main .bg-gradient-to-br {
+  background: linear-gradient(160deg, var(--dl-canvas-a), var(--dl-panel)) !important;
+  border: 2px solid var(--dl-line-strong) !important;
+  box-shadow: inset 0 0 0 5px var(--dl-surf), inset 0 0 0 6px var(--dl-line), var(--dl-shadow) !important;
+  color: var(--dl-ink) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br h3,
+html[data-theme="sepia"] main .bg-gradient-to-br h3 {
+  color: var(--dl-ink) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br .bg-black\/25,
+html[data-theme="sepia"] main .bg-gradient-to-br .bg-black\/25 {
+  background-color: var(--dl-surf) !important;
+  color: var(--dl-ink) !important;
+  border-color: var(--dl-line-strong) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br .bg-emerald-950\/50,
+html[data-theme="sepia"] main .bg-gradient-to-br .bg-emerald-950\/50 {
+  background-color: var(--dl-surf2) !important;
+  color: var(--dl-ink-soft) !important;
+  border-left-color: var(--dl-gold) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br .bg-emerald-950\/90,
+html[data-theme="sepia"] main .bg-gradient-to-br .bg-emerald-950\/90 {
+  background-color: var(--dl-panel) !important;
+  color: var(--dl-gold-deep) !important;
+  border-color: var(--dl-line-strong) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br .text-emerald-100,
+html[data-theme="sepia"] main .bg-gradient-to-br .text-emerald-100 {
+  color: var(--dl-muted) !important;
+  border-color: var(--dl-line) !important;
+}
+html[data-theme="kertas"] main .bg-gradient-to-br .text-amber-300,
+html[data-theme="sepia"] main .bg-gradient-to-br .text-amber-300 {
+  color: var(--dl-gold) !important;
+}
+
+/* ---------- Kartu Kaidah Aktif di Sidebar (Kertas & Sepia Ringan + Aksen Emas) ---------- */
+html[data-theme="kertas"] main aside button.bg-emerald-950,
+html[data-theme="sepia"] main aside button.bg-emerald-950,
+html[data-theme="kertas"] main .lg\:hidden button.bg-emerald-950,
+html[data-theme="sepia"] main .lg\:hidden button.bg-emerald-950 {
+  background-color: var(--dl-panel) !important;
+  border: 1.5px solid var(--dl-gold) !important;
+  border-left: 4px solid var(--dl-gold) !important;
+  color: var(--dl-ink) !important;
+  box-shadow: var(--dl-shadow) !important;
+}
+html[data-theme="kertas"] main aside button.bg-emerald-950 .text-amber-300,
+html[data-theme="sepia"] main aside button.bg-emerald-950 .text-amber-300,
+html[data-theme="kertas"] main .lg\:hidden button.bg-emerald-950 .text-emerald-200,
+html[data-theme="sepia"] main .lg\:hidden button.bg-emerald-950 .text-emerald-200 {
+  color: var(--dl-gold-deep) !important;
+}
+
+/* ---------- Kanvas Mushaf (Bingkai Jadwal + Ornamen Sudut Khatam) ---------- */
+html[data-theme] .kanvas-mushaf {
+  position: relative !important;
+  background: linear-gradient(165deg, var(--dl-canvas-a), var(--dl-canvas-b)) !important;
+  border: 2px solid var(--dl-line-strong) !important;
+  box-shadow: inset 0 0 0 5px var(--dl-surf), inset 0 0 0 6px var(--dl-line), var(--dl-shadow) !important;
+}
+html[data-theme] .kanvas-mushaf::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  pointer-events: none;
+  z-index: 0;
+  background-color: var(--dl-gold);
+  opacity: 0.36;
+  -webkit-mask-image: var(--dl-star), var(--dl-star), var(--dl-star), var(--dl-star);
+  mask-image: var(--dl-star), var(--dl-star), var(--dl-star), var(--dl-star);
+  -webkit-mask-size: 11px 11px;
+  mask-size: 11px 11px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: left top, right top, left bottom, right bottom;
+  mask-position: left top, right top, left bottom, right bottom;
+}
+html[data-theme] .kanvas-mushaf > .absolute {
+  right: 24px !important;
+  top: 12px !important;
+}
+
+/* ---------- Permukaan Kartu & Warna Umum ---------- */
+html[data-theme] main .bg-white,
+html[data-theme] footer.bg-white {
+  background-color: var(--dl-surf) !important;
+  border-color: var(--dl-line) !important;
+  box-shadow: var(--dl-shadow);
+}
+html[data-theme] main .bg-stone-50,
+html[data-theme] main .bg-stone-50\/70,
+html[data-theme] main .bg-stone-100 {
+  background-color: var(--dl-surf2) !important;
+  border-color: var(--dl-line) !important;
+}
+html[data-theme] main .border-stone-200,
+html[data-theme] main .border-stone-300,
+html[data-theme] main .border-stone-100,
+html[data-theme] footer.border-stone-200 {
+  border-color: var(--dl-line) !important;
+}
+html[data-theme] blockquote {
+  background-color: var(--dl-panel) !important;
+  border-left: 4px solid var(--dl-gold) !important;
+  color: var(--dl-ink-soft) !important;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.08rem !important;
+}
+
+/* Teks Umum */
+html[data-theme] main .text-slate-950,
+html[data-theme] main .text-slate-900,
+html[data-theme] main .text-emerald-950 {
+  color: var(--dl-ink) !important;
+}
+html[data-theme] main .text-slate-800,
+html[data-theme] main .text-slate-700,
+html[data-theme] footer .text-slate-700 {
+  color: var(--dl-ink-soft) !important;
+}
+html[data-theme] main .text-slate-600,
+html[data-theme] main .text-slate-500 {
+  color: var(--dl-muted) !important;
+}
+html[data-theme] main .text-emerald-900,
+html[data-theme] main .text-emerald-800,
+html[data-theme] footer .text-emerald-800 {
+  color: var(--dl-accent) !important;
+}
+html[data-theme] main .text-amber-600,
+html[data-theme] main .text-amber-900,
+html[data-theme] main .text-amber-950 {
+  color: var(--dl-gold) !important;
+}
+
+/* FIX KONTRAS: Tombol & Lencana Kuning Emas (bg-amber-400 / bg-amber-500) SELALU Teks Gelap */
+html[data-theme] main .bg-amber-400,
+html[data-theme] main .bg-amber-400 *,
+html[data-theme] main .bg-amber-400.text-emerald-950,
+html[data-theme] main .bg-amber-500,
+html[data-theme] main .bg-amber-500 * {
+  color: #16241E !important;
+}
+
+/* Tombol Aksi Utama (bg-emerald-900) — Tegas & Elegan di Semua Tema */
+html[data-theme] main button.bg-emerald-900,
+html[data-theme] main a.bg-emerald-900,
+html[data-theme] main .w-8.h-8.bg-emerald-900 {
+  background-color: #0F5C4A !important;
+  color: #FFFDF8 !important;
+  border: 1px solid #0B4638 !important;
+}
+html[data-theme="sepia"] main button.bg-emerald-900,
+html[data-theme="sepia"] main a.bg-emerald-900,
+html[data-theme="sepia"] main .w-8.h-8.bg-emerald-900 {
+  background-color: #7A4112 !important;
+  color: #FDF6E8 !important;
+  border: 1px solid #5E300B !important;
+}
+html[data-theme="zamrud"] main button.bg-emerald-900,
+html[data-theme="zamrud"] main a.bg-emerald-900 {
+  background-color: #115E4D !important;
+  color: #F3EAD8 !important;
+  border: 1px solid var(--dl-line-strong) !important;
+}
+
+/* Mode Zamrud Khusus: Kartu Warna Lembut, Input, & Panah SVG Cerah */
+html[data-theme="zamrud"] main .bg-emerald-50,
+html[data-theme="zamrud"] main .bg-emerald-50\/80,
+html[data-theme="zamrud"] main .bg-emerald-100,
+html[data-theme="zamrud"] main .bg-emerald-100\/90,
+html[data-theme="zamrud"] main .bg-emerald-200\/70 {
+  background-color: rgba(14, 124, 99, 0.22) !important;
+  border-color: rgba(63, 217, 188, 0.35) !important;
+  color: #D7F5EE !important;
+}
+html[data-theme="zamrud"] main .bg-amber-50,
+html[data-theme="zamrud"] main .bg-amber-50\/90,
+html[data-theme="zamrud"] main .bg-amber-100,
+html[data-theme="zamrud"] main .bg-amber-100\/70,
+html[data-theme="zamrud"] main .bg-amber-100\/90,
+html[data-theme="zamrud"] main .bg-amber-200\/80 {
+  background-color: rgba(242, 200, 102, 0.18) !important;
+  border-color: rgba(242, 200, 102, 0.45) !important;
+  color: #FBE7B4 !important;
+}
+html[data-theme="zamrud"] main .bg-sky-50,
+html[data-theme="zamrud"] main .bg-sky-100\/85 {
+  background-color: rgba(127, 166, 255, 0.18) !important;
+  border-color: rgba(127, 166, 255, 0.42) !important;
+  color: #DCE7FF !important;
+}
+html[data-theme="zamrud"] main .bg-rose-50,
+html[data-theme="zamrud"] main .bg-rose-100 {
+  background-color: rgba(255, 122, 99, 0.18) !important;
+  border-color: rgba(255, 122, 99, 0.42) !important;
+  color: #FFD7D0 !important;
+}
+html[data-theme="zamrud"] main input {
+  background-color: var(--dl-panel) !important;
+  color: var(--dl-ink) !important;
+  border-color: var(--dl-line) !important;
+}
+html[data-theme="zamrud"] main .text-sky-950,
+html[data-theme="zamrud"] main .text-sky-900 { color: #9EC0FF !important; }
+html[data-theme="zamrud"] main .text-rose-950,
+html[data-theme="zamrud"] main .text-rose-900,
+html[data-theme="zamrud"] main .text-rose-800 { color: #FFA696 !important; }
+html[data-theme="zamrud"] main .kanvas-mushaf .text-slate-950 { color: #F8F1E3 !important; }
+html[data-theme="zamrud"] .kanvas-mushaf svg g path,
+html[data-theme="zamrud"] .kanvas-mushaf svg marker path {
+  filter: brightness(1.38) saturate(1.2) drop-shadow(0 0 2px rgba(255, 255, 255, 0.22));
+}
+
+/* Mode Fokus Baca (Lebarkan Kanvas Ayat di Desktop) */
+html[data-focus="on"] main aside {
+  display: none !important;
+}
+html[data-focus="on"] main section.lg\:col-span-8 {
+  grid-column: span 12 / span 12 !important;
+  max-width: 960px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* ---------- Footer Kolofon Akademik IAT ---------- */
+html[data-theme] footer {
+  border-top: 2px solid var(--dl-line-strong) !important;
+}
+.dl-iat-badge-bar {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--dl-line);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dl-gold);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ==========================================================================
+   TOMBOL STRIP KIRI ATAS (☰) & PANEL STUDIO DRAWER DHAMIR-LENS
+   ========================================================================== */
+.dl-menu-btn {
+  position: fixed;
+  top: 12px;
+  left: 14px;
+  z-index: 60;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  border: 1.5px solid var(--dl-line-strong);
+  background: var(--dl-surf);
+  color: var(--dl-ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.16s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.dl-menu-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--dl-gold);
+  background: var(--dl-surf2);
+}
+
+.dl-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background: rgba(8, 18, 14, 0.52);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+.dl-scrim.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dl-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(332px, 88vw);
+  z-index: 9995;
+  background: var(--dl-surf);
+  color: var(--dl-ink);
+  border-right: 2px solid var(--dl-line-strong);
+  box-shadow: 24px 0 60px -20px rgba(0, 0, 0, 0.45);
+  transform: translateX(-104%);
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.dl-drawer.open {
+  transform: translateX(0);
+}
+
+.dl-drawer-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--dl-line);
+  background: var(--dl-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.dl-drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dl-drawer-brand b {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--dl-ink);
+}
+.dl-drawer-brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dl-gold);
+  font-weight: 700;
+}
+.dl-drawer-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid var(--dl-line);
+  background: var(--dl-surf);
+  color: var(--dl-ink);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.dl-drawer-close:hover {
+  border-color: var(--dl-gold);
+}
+
+.dl-drawer-body {
+  padding: 16px 18px 24px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dl-sec-title {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dl-gold);
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dl-sec-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--dl-line);
+}
+
+.dl-nav-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+.dl-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--dl-ink-soft);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.16s ease;
+}
+.dl-nav-item:hover {
+  background: var(--dl-surf2);
+  color: var(--dl-ink);
+  border-color: var(--dl-line);
+}
+.dl-nav-item.active {
+  background: var(--dl-panel);
+  color: var(--dl-ink);
+  border-color: var(--dl-line-strong);
+  font-weight: 700;
+}
+
+/* 3 Swatch Tema Manuskrip */
+.dl-swatches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.dl-sw {
+  padding: 10px 6px 8px;
+  border-radius: 12px;
+  border: 1.5px solid var(--dl-line);
+  background: var(--dl-surf2);
+  color: var(--dl-ink);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  transition: all 0.16s ease;
+}
+.dl-sw:hover { border-color: var(--dl-gold); transform: translateY(-1px); }
+.dl-sw.active {
+  border-color: var(--dl-gold);
+  box-shadow: 0 0 0 2px rgba(200, 158, 70, 0.35);
+}
+.dl-sw-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Tombol Skala Khat & Font */
+.dl-pill-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.dl-pill-row.two {
+  grid-template-columns: 1fr 1fr;
+}
+.dl-pill {
+  padding: 7px 6px;
+  border-radius: 9px;
+  border: 1px solid var(--dl-line);
+  background: var(--dl-surf2);
+  color: var(--dl-ink-soft);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.dl-pill.active {
+  background: var(--dl-nav-active-bg);
+  color: var(--dl-nav-active-ink);
+  border-color: transparent;
+}
+
+.dl-action-btn {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 11px;
+  border: 1px solid var(--dl-line-strong);
+  background: var(--dl-panel);
+  color: var(--dl-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.dl-action-btn:hover {
+  border-color: var(--dl-gold);
+}
+
+.dl-info-box {
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--dl-panel);
+  border: 1px solid var(--dl-line);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--dl-ink-soft);
+}
+.dl-info-box b { color: var(--dl-ink); }
+
+/* Quick Switcher Desktop (Pojok Kanan Bawah — 3 Pill Jelas, Anti Bingung) */
+.dl-quick-dock {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .dl-quick-dock {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 55;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 999px;
+    border: 1.5px solid var(--dl-line-strong);
+    background: var(--dl-surf);
+    box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.35);
+  }
+  .dl-qbtn {
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--dl-muted);
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.16s ease;
+  }
+  .dl-qbtn:hover { color: var(--dl-ink); }
+  .dl-qbtn.active {
+    background: var(--dl-nav-active-bg);
+    color: var(--dl-nav-active-ink);
+  }
+}
+
+/* Animasi Bawaan */
+@keyframes dashFlow { to { stroke-dashoffset: -20; } }
+.animate-panah { animation: dashFlow 1s linear infinite; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fadeIn 0.22s ease-out forwards; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---------- Mode Cetak / Simpan PDF Bersih untuk Bimbingan ---------- */
+@media print {
+  header, nav, aside, .dl-menu-btn, .dl-drawer, .dl-scrim, .dl-quick-dock {
+    display: none !important;
+  }
+  html, body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  main section {
+    grid-column: span 12 / span 12 !important;
+  }
+}
